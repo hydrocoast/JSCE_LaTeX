@@ -7,26 +7,26 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% ���� jis �t�H���g���g���b�N���g���ꍇ�́C�ȉ����A���R�����g���Ă��������D
+% もし jis フォントメトリックを使う場合は，以下をアンコメントしてください．
 % \DeclareFontShape{JY1}{mc}{m}{n}{<-> s * jis}{}
 % \DeclareFontShape{JY1}{gt}{m}{n}{<-> s * jisg}{}
 %
 \documentclass{jsce}
 %
 \usepackage{epic,eepic,eepicsup}
-\usepackage{graphicx}
-%  ams���g�����͈ȉ����A���R�����g���Ă��������D
+\usepackage[dvipdfmx]{graphicx}
+%  amsを使う方は以下をアンコメントしてください．
 %\usepackage{amssymb,amsmath}
-% �p��̓T�|�[�g���Ă��邩�ǂ����s��
+% 英語はサポートしているかどうか不明
 % \inenglish
-% �w��T���v���� times �Ƃ���̂Ŏw�肵�Ă����܂�
+% 学会サンプルに times とあるので指定しておきます
 \usepackage{times}
-% ���邢�́C���̑�փt�H���g�Ƃ��� TX �t�H���g���E�E�E
+% あるいは，その代替フォントとして TX フォントを・・・
 % \usepackage{txfonts}
-%  ���邢�́Cv, w �Ɋۂ݂�тт����̂̕������D���ȏꍇ��
+%  あるいは，v, w に丸みを帯びたものの方がお好きな場合は
 % \usepackage[varg]{txfonts}
 %
-\finalversion % �w�b�_���s�v�炵��
+\finalversion % ヘッダが不要らしい
 %
 %  \volumenumber{9} % H_AND_F
 %  \journalnumber{4}
@@ -38,38 +38,38 @@
 %  \firstenglishpagenumber{11}
 %  \fieldnumber{3}
 %
-\title{�y�؊w��_���W�̊��S�ŉ����e�p�a�����e\LaTeX �쐬��}
+\title{土木学会論文集の完全版下投稿用和文原稿\LaTeX 作成例}
 %
 \endtitle{PRINT SAMPLE FOR JAPANESE MANUSCRIPT FOR JOURNALS OF
  JSCE USING \LaTeX}
 %
-% email�A�h���X�̃t�H���g���^�C�v���C�^�[�̂ɂ��������͎��s���A���R�����g
+% emailアドレスのフォントをタイプライター体にしたい方は次行をアンコメント
 % \emailstyle{\ttfamily}
-% email�A�h���X�����J�������́C
-%% \thanks{������������\email{your_name@foo.ac.jp}}�̂悤�ɂ��Ă��������D
+% emailアドレスを公開される方は，
+%% \thanks{○○○○○○\email{your_name@foo.ac.jp}}のようにしてください．
 %
-\author{�_���W�@�ҏW�ψ���\thanks{����� �H�� �y�ؑ�w���� �H�w��
-�y�؍H�w�ȁi��160-0001�����s�V�h��l�J�꒚��
-���Ԓn�j\email{your_name@foo.ac.jp}}�E
-�����@��\thanks{����� �H�C �y�،��݊������ �Z�p�J�����i��160-0002����
-�s�V�h��O��Z����13-5�j}�E
+\author{論文集　編集委員会\thanks{正会員 工博 土木大学教授 工学部
+土木工学科（〒160-0001東京都新宿区四谷一丁目
+無番地）\email{your_name@foo.ac.jp}}・
+事務　局\thanks{正会員 工修 土木建設株式会社 技術開発部（〒160-0002東京
+都新宿区三矢六丁目13-5）}・
 Civil ENGINEER\thanks{Member of JSCE, PhD., JSCE Corp.}}
 %
 \endauthor{Editorial COMMITTEE, Japan SOCIETY and Civil ENGINEERING}
 %
-\abstract{���̃t�@�C����
-�y�؊w��_���W�̊��S�ŉ����e�i�a���j���쐬���邽�߂ɕK�v
-�ȁC���C�A�E�g��t�H���g�Ɋւ����{�I�ȏ����L�q���Ă��܂��D�Ɠ����ɁC
-�ŉ����e���̂��̂̑̍�(A4)���Ƃ��Ă��邽�߁C���̃t�@�C���̒��̕��͂�}
-�\�����ꂩ�珑�����Ƃ��Ă�����ۂ̂��̂ɒu��������΁C����̃t�H���g��z
-�u�̌��e��e�Ղɍ쐬���邱�Ƃ��ł��܂��D
+\abstract{このファイルは
+土木学会論文集の完全版下原稿（和文）を作成するために必要
+な，レイアウトやフォントに関する基本的な情報を記述しています．と同時に，
+版下原稿そのものの体裁(A4)をとっているため，このファイルの中の文章や図
+表をこれから書こうとしている実際のものに置き換えれば，所定のフォントや配
+置の原稿を容易に作成することができます．
 
-���̃A�u�X�g���N�g���܂߁C�^�C�g�������̕��͖{���������E��1\,cm����
-�������܂��D�A�u�X�g���N�g�̃t�H���g�͖�����9\,pt�i�p��10\,pt�j��
-�p���Ă��������D�A�u
-�X�g���N�g�̒�����7�s�ȓ��ł��D�A�u�X�g���N�g�̌��1�s�󂯂āC�L�[���[
-�h�𐔌�CComputer Modern Italic 9\,pt�i�p��10\,pt�j�̃t�H���g��
-�����ĉ������D}
+このアブストラクトを含め，タイトル部分の幅は本文よりも左右を1\,cmずつ
+狭くします．アブストラクトのフォントは明朝体9\,pt（英文10\,pt）を
+用いてください．アブ
+ストラクトの長さは7行以内です．アブストラクトの後に1行空けて，キーワー
+ドを数語，Computer Modern Italic 9\,pt（英文10\,pt）のフォントで
+書いて下さい．}
 %
 \keywords{Computer Modern, italic, 10\,pt, several words,
  one blank line below ABSTRACT, indent if key words exceed one line}
@@ -94,132 +94,132 @@ The title and authors use 12\,pt font.}
 \receivedate{2012. 11. 18}
 % \receivedate{January 15, 1991}
 %
-% \def\theenumi{\alph{enumi}}  % ���� enumerate �ŏ��̉ӏ��� (a) ��
-% \def\labelenumi{(\theenumi)} % �������ꍇ�E�E�E
+% \def\theenumi{\alph{enumi}}  % もし enumerate 最初の箇条を (a) と
+% \def\labelenumi{(\theenumi)} % したい場合・・・
 %
 \begin{document}
 
 \maketitle
 
-\section{�^�C�g���y�[�W}
+\section{タイトルページ}
 
-\subsection{�^�C�g�������̃��C�A�E�g�ƃt�H���g}
+\subsection{タイトル部分のレイアウトとフォント}
 
-�^�C�g���y�[�W�͓�̕����ō\������܂��D
+タイトルページは二つの部分で構成されます．
 \begin{enumerate}
-\item �^�C�g�������i��ځC���ҁC�����C�T�v�C
-�L�[���[�h�j�F����i�g
-\item �{�������F����i�g
+\item タイトル部分（題目，著者，所属，概要，
+キーワード）：横一段組
+\item 本文部分：横二段組
 \end{enumerate}
-���̂ق��C�w�b�_�ƃt�b�^�i�y�[�W�ԍ��j���t���܂��D
+このほか，ヘッダとフッタ（ページ番号）が付きます．
 
-�^�C�g�������̍��E�̃}�[�W���́C�{���̍��E�̃}�[�W������
-���ꂼ��1\,cm���傫���Ƃ��ĉ������D���Ȃ킿A4�p����
-���ɑ΂��č��E���ꂼ��3\,cm���̃}�[�W�����Ƃ�܂��D
+タイトル部分の左右のマージンは，本文の左右のマージンよりも
+それぞれ1\,cmずつ大きくとって下さい．すなわちA4用紙の
+幅に対して左右それぞれ3\,cmずつのマージンをとります．
 
-�^�C�g����A4�p���̏�ӂɖ�3\,cm�̃}�[�W�������C�Z���^�����O���܂��D
-�ȉ����̏��Ƀ^�C�g�������̍\���v�f�������ĉ������D
+タイトルはA4用紙の上辺に約3\,cmのマージンを取り，センタリングします．
+以下次の順にタイトル部分の構成要素を書いて下さい．
 \begin{description}
-\item[] �^�C�g���F�S�V�b�N��20\,pt�t�H���g�i�p���Ȃ�17\,pt�j\par
-        �i��1.5\,cm�̃X�y�[�X�j
-\item[] ���Җ��F������12\,pt�t�H���g\par
-        �i��5\,mm�̃X�y�[�X�j
-\item[] ���ҏ����F������8\,pt�t�H���g�i�p��9\,pt�j\par
-        �i��1\,cm�̃X�y�[�X�j
-\item[] �A�u�X�g���N�g�F������9\,pt�t�H���g�i�p��10\,pt�j�C7�s�ȓ�\par
-        �i1�s�̃X�y�[�X�j
-\item[] �L�[���[�h�FComputer Modern, italic, 9\,pt, \par
-        �p��10\,pt, ����C2�s�ȓ�
+\item[] タイトル：ゴシック体20\,ptフォント（英文なら17\,pt）\par
+        （約1.5\,cmのスペース）
+\item[] 著者名：明朝体12\,ptフォント\par
+        （約5\,mmのスペース）
+\item[] 著者所属：明朝体8\,ptフォント（英文9\,pt）\par
+        （約1\,cmのスペース）
+\item[] アブストラクト：明朝体9\,ptフォント（英文10\,pt），7行以内\par
+        （1行のスペース）
+\item[] キーワード：Computer Modern, italic, 9\,pt, \par
+        英文10\,pt, 数語，2行以内
 \end{description}
 
-���҂Ə����Ƃ͌��t�������őΉ��Â��C��L�̂悤�ɕ��ׂ�
-�������D`{\fontkeywords Key Words}'�Ƃ���������
-�{�[���h�C�^���b�N�̂ɂ��܂��D
+著者と所属とは肩付き数字で対応づけ，上記のように並べて
+下さい．`{\fontkeywords Key Words}'という文字は
+ボールドイタリック体にします．
 
-\subsection{�{�������̃��C�A�E�g�ƃt�H���g}
+\subsection{本文部分のレイアウトとフォント}
 
-�{���ƃL�[���[�h�̊Ԃɖ�1\,cm�̃X�y�[�X���󂯂Ă��������D
+本文とキーワードの間に約1\,cmのスペースを空けてください．
 
-�{���͓�i�g�ŁC���E�̃}�[�W����2\,cm���C�i�ƒi�Ƃ̊Ԃ̃X�y�[�X��
-��6\,mm�Ƃ��܂��D���ӂ̃}�[�W����24\,mm�ł��D
+本文は二段組で，左右のマージンは2\,cmずつ，段と段との間のスペースは
+約6\,mmとします．下辺のマージンは24\,mmです．
 
-�{���ɂ͖�����10\,pt�i�p��11\,pt�j�t�H���g��p���ĉ������D
-�e�����̃t�H���g�̓N���X�t�@�C��`{\tt jsce.cls}'��p����
-�ꍇ�ɂ͎���������Ă��܂�����C���҂��w�肷��K�v�͂���܂���D
+本文には明朝体10\,pt（英文11\,pt）フォントを用いて下さい．
+各部分のフォントはクラスファイル`{\tt jsce.cls}'を用いた
+場合には自動化されていますから，著者が指定する必要はありません．
 
-\subsection{�w�b�_�ƃt�b�^}
+\subsection{ヘッダとフッタ}
 
-�^�C�g���y�[�W�ɂ̓w�b�_�@�\���g���Ę_���W�̍����������܂��D�܂��C
-���ׂẴy�[�W�̉��Ӓ����Ƀt�b�^�@�\���g���ăy�[�W�����܂��D
-�����ǂ���ʒm���ꂽ���l���ŏI���e�쐬���ɓ���Ă��������D\LaTeX ��
-�ꍇ�ɂ͍ŏ��̕Ŕԍ��݂̂��K�v�ł��D���̃R���p�C����C�����I��
-�ŏI�Ŕԍ��͕\������܂��D
+タイトルページにはヘッダ機能を使って論文集の号巻数を入れます．また，
+すべてのページの下辺中央にフッタ機能を使ってページを入れます．
+事務局から通知された数値を最終原稿作成時に入れてください．\LaTeX の
+場合には最初の頁番号のみが必要です．二回のコンパイル後，自動的に
+最終頁番号は表示されます．
 
-\section{��ʃy�[�W}
+\section{一般ページ}
 
-\subsection{�r������ђ�}
+\subsection{脚注および注}
 
-��2�y�[�W�ȍ~�̒ʏ�̃y�[�W�͏�ӂ̃}�[�W����19\,mm�Ƃ��܂��D�����
-�O�̓^�C�g���y�[�W�̖{�������Ɠ������C�A�E�g�ƃt�H���g�Ŗ{�����쐬���܂��D
+第2ページ以降の通常のページは上辺のマージンを19\,mmとします．それ以
+外はタイトルページの本文部分と同じレイアウトとフォントで本文を作成します．
 
-�r���⒍�͂ł��邾�������ĉ������D�{�����Ő������邩�C�������͖{���̗�
-��Ɗ֌W�Ȃ��ꍇ�ɂ͕t�^�Ƃ��Ė{�������ɒu���ĉ������D
+脚注や注はできるだけ避けて下さい．本文中で説明するか，もしくは本文の流
+れと関係ない場合には付録として本文末尾に置いて下さい．
 
-\subsection{�e��}�N��}
+\subsection{各種マクロ}
 
-�}�j���A����ǂ�ł��������D�֗��Ȃ��̂��`���Ă���܂��D
+マニュアルを読んでください．便利なものを定義してあります．
 
-\section{���o���i���o����1�s�ȏ�ɒ����Ȃ�Ƃ���
-���̗�̂悤�ɃC���f���g���Đ܂�Ԃ��j}
+\section{見出し（見出しが1行以上に長くなるときは
+この例のようにインデントして折り返す）}
 
-\subsection{���o���̃��x��}
+\subsection{見出しのレベル}
 
-���o���̃��x����3�i�K�܂łƂ��܂��D��1���x���̌��o���i�߁j�̓S�V�b�N
-�̂Ƃ��C{\bf 2.}�Ȃǂ̐����ɑ����ď����܂��D
-�܂��C���o���̏㉺�ɃX�y�[�X����
-���܂��D���̃t�@�C���̃T���v�����番����悤�ɁC���1�s�ȏ�C
-����1�s���x�󂯂ĉ������D
+見出しのレベルは3段階までとします．第1レベルの見出し（節）はゴシック
+体とし，{\bf 2.}などの数字に続けて書きます．
+また，見出しの上下にスペースを空
+けます．このファイルのサンプルから分かるように，上を1行以上，
+下を1行程度空けて下さい．
 
-\subsection{��2���x���̌��o��}
+\subsection{第2レベルの見出し}
 
-��2���x���̌��o���i���߁j���S�V�b�N�̂ŁC{\bf (4)}�Ȃǂ�
-���ʕt��������t���܂��D���o���̏ゾ����1�s���x��
-�X�y�[�X���󂯂ĉ������D
+第2レベルの見出し（小節）もゴシック体で，{\bf (4)}などの
+括弧付き数字を付けます．見出しの上だけに1行程度の
+スペースを空けて下さい．
 
-\subsection{����ɐ[����}
+\subsection{さらに深い節}
 
-\subsubsection{��3���x���̌��o��}
+\subsubsection{第3レベルの見出し}
 
-��3���x���̌��o���i���j�́C���ʕt���A���t�@�x�b�g��t���C�㉺�ɂ͓���
-�X�y�[�X���󂯂܂���D��3���x����艺�ʂ̌��o���͗p���Ȃ��ŉ������D
+第3レベルの見出し（項）は，括弧付きアルファベットを付け，上下には特に
+スペースを空けません．第3レベルより下位の見出しは用いないで下さい．
 
-\section{��������ѐ��w�L��}
+\section{数式および数学記号}
 
-�����␔�w�L���͎��̎�(\ref{eq:1a})
+数式や数学記号は次の式(\ref{eq:1a})
 \begin{manyeqns}
 G&=&\sum_{n=0}^\infty b_n(t) \label{eq:1a} \\
 F&=& \int_\Gamma \sin\,z \d z \label{eq:1b}
 \end{manyeqns}
-�̂悤�ɖ{���ƓƗ����Ă���ꍇ�ł��C$C_D$, $\alpha(z)$��
-�悤�ɕ��͂̒��ɏo�Ă���ꍇ�ł�
-���������p�̃t�H���g��p���č쐬���܂��D
-�����␔�w�L���̕i���������Ɣŉ�
-���e�Ƃ��Ď󂯕t���܂���D
+のように本文と独立している場合でも，$C_D$, $\alpha(z)$の
+ように文章の中に出てくる場合でも
+同じ数式用のフォントを用いて作成します．
+数式や数学記号の品質が悪いと版下
+原稿として受け付けません．
 \begin{twoeqns}
 \EQab
 f(x)\equiv \sum_{n=1}^\infty a_n\,g_n(x), \quad
 \EQab
 a_n=\cdots \label{eq:twoeqns-b}
 \end{twoeqns}
-�����̓Z���^�����O���C���ԍ��͊��ʏ����ŉE�l�߂ɂ��܂��D
-���p�͎�(\ref{eq:twoeqns-b})�̂悤�ɂ��܂��D
+数式はセンタリングし，式番号は括弧書きで右詰めにします．
+引用は式(\ref{eq:twoeqns-b})のようにします．
 
 \begin{table}
-\caption{�\�̃L���v�V�����͕\�̏�ɒu���D���̂悤�ɒ���
-�Ƃ��̓C���f���g���Đ܂�Ԃ��D}\label{tab:1}
+\caption{表のキャプションは表の上に置く．このように長い
+ときはインデントして折り返す．}\label{tab:1}
 \begin{center}
 \begin{tabular}{ccc} \hline
- �����̔ԍ� & ����(cm) & ��(cm) \\ \hline
+ 供試体番号 & 高さ(cm) & 幅(cm) \\ \hline
  1 & 145.5 & 25.0 \\
  2 & 175.5 & 40.0 \\
  3 & 190.0 & 65.0 \\ \hline
@@ -232,65 +232,65 @@ a_n=\cdots \label{eq:twoeqns-b}
 \input{jsce-fig.tex}
 \end{center}
 \vspace*{-4mm}
-\caption{�}�̃L���v�V�����͐}�̉��ɒu��}\label{fig:1}
+\caption{図のキャプションは図の下に置く}\label{fig:1}
 \end{figure}
 
-\section{�}�\}
+\section{図表}
 
-\subsection{�}�\�̈ʒu}
+\subsection{図表の位置}
 
-�}�\�͂������ŏ��Ɉ��p���镶�͂Ɠ����i���邢��
-���J���Ō�����͈͂́j�y�[�W�ɒu�����Ƃ������Ƃ��܂��D
-���e�����ɂ܂Ƃ߂��肵�Ă͂����܂���D
-�܂��C�}�\�͂��ꂼ��̃y�[�W�̏㕔
-�ɏW�߂ă��C�A�E�g���ĉ������D�}�\�̉����́C�u��i�Ԃ������v
-���邢�͂��̃T���v����\tabno{\ref{tab:1}}��\figno{\ref{fig:1}}��
-�悤�Ɂu��i�̕������ς��v�̂����ꂩ�Ƃ��܂��D
-�}�\�̕�����i���ȉ��ɂ��Đ}�\�̉��ɖ{���e�L�X�g��
-�z�u���邱�Ƃ͂�߂ĉ������D
-�}�\�ƕ��͖{�̂Ƃ̊Ԃɂ�1�s���x�̋󔒂��󂯂ċ�ʂ𖾊m�ɂ��܂��D
+図表はそれらを最初に引用する文章と同じ（あるいは
+見開きで見える範囲の）ページに置くことを原則とします．
+原稿末尾にまとめたりしてはいけません．
+また，図表はそれぞれのページの上部
+に集めてレイアウトして下さい．図表の横幅は，「二段ぶち抜き」
+あるいはこのサンプルの\tabno{\ref{tab:1}}や\figno{\ref{fig:1}}の
+ように「一段の幅いっぱい」のいずれかとします．
+図表の幅を一段幅以下にして図表の横に本文テキストを
+配置することはやめて下さい．
+図表と文章本体との間には1行程度の空白を空けて区別を明確にします．
 
-\subsection{�}�\���̕�������уL���v�V����}
+\subsection{図表中の文字およびキャプション}
 
-�}�\���̕����␔���̑傫�����������Ȃ�߂��Ȃ��悤�ɒ��ӂ��Ă��������D
-���ɃL���v�V�����̑傫���i9\,pt�i�p��10\,pt�j�j���
-�������Ȃ�Ȃ��悤�ɂ��ĉ������D
+図表中の文字や数式の大きさが小さくなり過ぎないように注意してください．
+特にキャプションの大きさ（9\,pt（英文10\,pt））より
+小さくならないようにして下さい．
 
-�����L���v�V������\tabno{\ref{tab:1}}�̂悤��
-�C���f���g���Đ܂�Ԃ��܂��D�p���L���v
-�V�����̏ꍇ�́C���o����{\bf Table 1}��{\bf Fig. 2}�Ƃ��ĉ������D
-�N���X�t�@�C���𗘗p���Ă���� \verb+\figno+���Ŏ����I�ɂ����Ȃ�܂��D
+長いキャプションは\tabno{\ref{tab:1}}のように
+インデントして折り返します．英文キャプ
+ションの場合は，見出しを{\bf Table 1}や{\bf Fig. 2}として下さい．
+クラスファイルを利用していれば \verb+\figno+等で自動的にそうなります．
 
-\section{�Q�l�����̈��p�ƃ��X�g}
+\section{参考文献の引用とリスト}
 
-�Q�l�����͏o�����ɔԍ���U��C���̈��p�ӏ���
-���̂悤��\cite{1,2}��t��
-�E���ʕt�������Ŏw�����܂��D
-�Q�l�����͂��̑S�Ă����e�̖����ɂ܂Ƃ߂ă��X
-�g�Ƃ��Ď����C�r���ɂ͂��Ȃ��ł��������D
+参考文献は出現順に番号を振り，その引用箇所で
+このように\cite{1,2}上付き
+右括弧付き数字で指示します．
+参考文献はその全てを原稿の末尾にまとめてリス
+トとして示し，脚注にはしないでください．
 
-�Ȃ��Q�l�������X�g�̂��Ƃ�1�s�󂯂āC�����ǂ���ʒm���ꂽ���e�󗝓���
-�E�l�߂ŏ����ĉ������D
+なお参考文献リストのあとに1行空けて，事務局から通知された原稿受理日を
+右詰めで書いて下さい．
 
 \lastpagecontrol[1cm]{13cm}
 
-\section{�ŏI�y�[�W�̃��C�A�E�g�Ɖp���v�|}
+\section{最終ページのレイアウトと英文要旨}
 
-�ŏI�y�[�W�ɂ͉p���̃^�C�g���C���Җ�����їv�|������i�g�ŏ����܂��D��
-�̃T���v���ɂ���悤�ɁC�{����Q�l�������X�g�܂ł̓�i�g�����̍��E�̒���
-�������قړ����ɂ��C1\,cm���x�̋󔒂�
-����ĉp���v�|��z�u���܂��D�p���v�|��
-���̕��̓^�C�g�������Ɠ������{���������E��1\,cm���������܂��D
+最終ページには英文のタイトル，著者名および要旨を横一段組で書きます．こ
+のサンプルにあるように，本文や参考文献リストまでの二段組部分の左右の柱の
+高さをほぼ同じにし，1\,cm程度の空白を
+入れて英文要旨を配置します．英文要旨部
+分の幅はタイトル部分と同じく本文よりも左右を1\,cmずつ狭くします．
 
-\ack �u�ӎ��v�́u���_�v�̌�ɒu���ĉ������D
-���o���ƃR�������S�V�b�N�̂�
-�����C���̒��ォ�當�͂������o���ĉ������D
+\ack 「謝辞」は「結論」の後に置いて下さい．
+見出しとコロンをゴシック体で
+書き，その直後から文章を書き出して下さい．
 
 \appendix
 
-\section{�u�t�^�v�̈ʒu}
+\section{「付録」の位置}
 
-�u�t�^�v������ꍇ�́u�ӎ��v�Ɓu�Q�l�����v�̊Ԃɒu�����ƁD
+「付録」がある場合は「謝辞」と「参考文献」の間に置くこと．
 
 \begin{thebibliography}{20}
 \bibitem{1} Hill, R.: A self-consistent mechanics of composite materials,
@@ -304,12 +304,12 @@ a_n=\cdots \label{eq:twoeqns-b}
  \newblock {\em Large Eddy Simulation of Complex Engineering and
  Geophysical Flows,} Galperin, B. and Orszag, S.A. eds.
  Cambridge University Press, Cambridge, pp.159-177, 1993.
-\bibitem{4} �t�@��, Y.C.:
- \newblock �ő̗̂͊w�^���_,
- \newblock �勴�`�v, ���㐟�j����, �|����, 1970.
-\bibitem{5} �y�c�����C�ؑ� ��:
- \newblock �ŉ����e�X�^�C���t�H�[�}�b�g�̍쐬�ɂ���,
- \newblock �y�؊w��_���W, No.333/II-99, pp.20-33, 1994.
+\bibitem{4} ファン, Y.C.:
+ \newblock 固体の力学／理論,
+ \newblock 大橋義夫, 村上澄男共訳, 培風館, 1970.
+\bibitem{5} 土田建次，木村 一:
+ \newblock 版下原稿スタイルフォーマットの作成について,
+ \newblock 土木学会論文集, No.333/II-99, pp.20-33, 1994.
 \end{thebibliography}
 
 \lastpagesettings

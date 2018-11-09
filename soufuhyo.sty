@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% “y–ØŠw‰ï˜_•¶W --- ‘—•t•[ (soufu-hyo) ì¬‚Ì‚½‚ß‚ÌƒXƒ^ƒCƒ‹ƒtƒ@ƒCƒ‹
+% åœŸæœ¨å­¦ä¼šè«–æ–‡é›† --- é€ä»˜ç¥¨ (soufu-hyo) ä½œæˆã®ãŸã‚ã®ã‚¹ã‚¿ã‚¤ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«
 %
-%   ƒTƒ“ƒvƒ‹‚Í \endinput ‚Ì‚¤‚µ‚ë‚É‚ ‚é
+%   ã‚µãƒ³ãƒ—ãƒ«ã¯ \endinput ã®ã†ã—ã‚ã«ã‚ã‚‹
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifx\gtfam\undefined\else
@@ -12,7 +12,7 @@
 %
 \typeout{soufuhyo.sty ver. Feb 16 2002 stardate [-30]8020.88 ^^J
  \space\space\space\space\space (C) bear@civil.tohoku.ac.jp ^^J
- ƒAƒXƒL[‚ÌpLaTeX (platex/qlatex209) ‚ÅƒRƒ“ƒpƒCƒ‹‚µ‚Ä‚­‚¾‚³‚¢D}
+ ã‚¢ã‚¹ã‚­ãƒ¼ã®pLaTeX (platex/qlatex209) ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦ãã ã•ã„ï¼}
 \typeout{March 31 2005
 Partly, adjusted by SANBI Co., Ltd. (C)
 }
@@ -34,7 +34,7 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \newcounter{reprint}
 \setcounter{reprint}{50}
 %
-% ƒf[ƒ^ì¬ƒ}ƒNƒ
+% ãƒ‡ãƒ¼ã‚¿ä½œæˆãƒã‚¯ãƒ­
 %
 \title{}
 \def\etitle#1{\gdef\@etitle{#1}} \etitle{}
@@ -51,7 +51,7 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \@membership{#1} \\ \cline{3-4}%
 &
 & 
-\multicolumn{2}{l|}{{\bf ‘æ 1 ’˜Ò‚ÌŒÂl‰ïˆõ”Ô†iNo.}~#5{\bfj}}
+\multicolumn{2}{l|}{{\bf ç¬¬ 1 è‘—è€…ã®å€‹äººä¼šå“¡ç•ªå·ï¼ˆNo.}~#5{\bfï¼‰}}
 }
 }
 
@@ -76,11 +76,11 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 
 
 \def\@membership#1{%
- \bf \ifdim#1pt>3pt {\scriptsize\bf ƒtƒFƒ[} ³ Šw ”ñ \else
-  \ifdim#1pt>2pt {\scriptsize\bf ƒtƒFƒ[} ³ Šw \MARU{”ñ} \else
-   \ifdim#1pt>1pt {\scriptsize\bf ƒtƒFƒ[} ³ \MARU{Šw} ”ñ \else
-    \ifdim#1pt>0pt \MARU{{\scriptsize\bf ƒtƒFƒ[}} ³ Šw ”ñ \else
-     {\scriptsize\bf ƒtƒFƒ[} \MARU{³} Šw ”ñ \fi\fi\fi\fi}
+ \bf \ifdim#1pt>3pt {\scriptsize\bf ãƒ•ã‚§ãƒ­ãƒ¼} æ­£ å­¦ é \else
+  \ifdim#1pt>2pt {\scriptsize\bf ãƒ•ã‚§ãƒ­ãƒ¼} æ­£ å­¦ \MARU{é} \else
+   \ifdim#1pt>1pt {\scriptsize\bf ãƒ•ã‚§ãƒ­ãƒ¼} æ­£ \MARU{å­¦} é \else
+    \ifdim#1pt>0pt \MARU{{\scriptsize\bf ãƒ•ã‚§ãƒ­ãƒ¼}} æ­£ å­¦ é \else
+     {\scriptsize\bf ãƒ•ã‚§ãƒ­ãƒ¼} \MARU{æ­£} å­¦ é \fi\fi\fi\fi}
 
 \def\authorA{\@ifnextchar [{\@aauthorA}{\@aauthorA[0]}}
 
@@ -114,49 +114,49 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \author[4]{}{}{}{}  \authorA[4]{}{}{} \authorB[4]{}{}{}
 \authorC[4]{}{}{} \authorD[4]{}{}{} \authorE[4]{}{}{}
 %
-\def\RONBUN{˜_•¶} \def\HOUKOKU{•ñ} \def\NOTE{ƒm[ƒg}
-\def\TOUGI{“¢‹c}  \def\TENBOU{ˆÏˆõ‰ï•ñ}
-\def\kubun#1{\ifdim#1pt=1pt \gdef\RONBUN{\Maru{˜_•¶}} \else
- \ifdim#1pt=2pt \gdef\HOUKOKU{\Maru{•ñ}} \else
- \ifdim#1pt=3pt \gdef\NOTE{\Maru{ƒm[ƒg}} \else
- \ifdim#1pt=4pt \gdef\TOUGI{\Maru{“¢‹c}} \else
-  \ifdim#1pt=5pt \gdef\TENBOU{\Maru{ˆÏˆõ‰ï•ñ}} \fi\fi\fi\fi\fi}
+\def\RONBUN{è«–æ–‡} \def\HOUKOKU{å ±å‘Š} \def\NOTE{ãƒãƒ¼ãƒˆ}
+\def\TOUGI{è¨è­°}  \def\TENBOU{å§”å“¡ä¼šå ±å‘Š}
+\def\kubun#1{\ifdim#1pt=1pt \gdef\RONBUN{\Maru{è«–æ–‡}} \else
+ \ifdim#1pt=2pt \gdef\HOUKOKU{\Maru{å ±å‘Š}} \else
+ \ifdim#1pt=3pt \gdef\NOTE{\Maru{ãƒãƒ¼ãƒˆ}} \else
+ \ifdim#1pt=4pt \gdef\TOUGI{\Maru{è¨è­°}} \else
+  \ifdim#1pt=5pt \gdef\TENBOU{\Maru{å§”å“¡ä¼šå ±å‘Š}} \fi\fi\fi\fi\fi}
 \kubun{0}
 \newdimen\@bumon
 \def\bumon#1{\global\@bumon=#1pt}
-\def\fukubumon#1{\gdef\@fukubumon{#1}\gdef\fukubumonyn{‚È‚µ\,\<E\<\,\Maru{‚ ‚è}}}
+\def\fukubumon#1{\gdef\@fukubumon{#1}\gdef\fukubumonyn{ãªã—\,\<ãƒ»\<\,\Maru{ã‚ã‚Š}}}
 \fukubumon{~}
-\def\fukubumonyn{\Maru{‚È‚µ}\<E\<‚ ‚è}
+\def\fukubumonyn{\Maru{ãªã—}\<ãƒ»\<ã‚ã‚Š}
 %
 \def\ikisatua[#1]#2{\ifdim#1pt>0pt
- \gdef\@reviewa{\Maru{—L}E–³}\else\gdef\@reviewa{—LE\Maru{–³}}\fi
+ \gdef\@reviewa{\Maru{æœ‰}ãƒ»ç„¡}\else\gdef\@reviewa{æœ‰ãƒ»\Maru{ç„¡}}\fi
  \gdef\@ikisatua{#2}} \ikisatua[0]{}
- \def\@reviewa{—LE–³}
+ \def\@reviewa{æœ‰ãƒ»ç„¡}
 \def\ikisatub[#1]#2{\ifdim#1pt>0pt
- \gdef\@reviewb{\Maru{—L}E–³}\else\gdef\@reviewb{—LE\Maru{–³}}\fi
+ \gdef\@reviewb{\Maru{æœ‰}ãƒ»ç„¡}\else\gdef\@reviewb{æœ‰ãƒ»\Maru{ç„¡}}\fi
  \gdef\@ikisatub{#2}} \ikisatub[0]{}
- \def\@reviewb{—LE–³}
+ \def\@reviewb{æœ‰ãƒ»ç„¡}
 \def\ikisatuc[#1]#2{\ifdim#1pt>0pt
- \gdef\@reviewc{\Maru{—L}E–³}\else\gdef\@reviewc{—LE\Maru{–³}}\fi
+ \gdef\@reviewc{\Maru{æœ‰}ãƒ»ç„¡}\else\gdef\@reviewc{æœ‰ãƒ»\Maru{ç„¡}}\fi
  \gdef\@ikisatuc{#2}} \ikisatuc[0]{}
- \def\@reviewc{—LE–³}
+ \def\@reviewc{æœ‰ãƒ»ç„¡}
 \def\ikisatud[#1]#2{\ifdim#1pt>0pt
- \gdef\@reviewd{\Maru{—L}E–³}\else\gdef\@reviewd{—LE\Maru{–³}}\fi
+ \gdef\@reviewd{\Maru{æœ‰}ãƒ»ç„¡}\else\gdef\@reviewd{æœ‰ãƒ»\Maru{ç„¡}}\fi
  \gdef\@ikisatud{#2}} \ikisatud[0]{}
- \def\@reviewd{—LE–³}
+ \def\@reviewd{æœ‰ãƒ»ç„¡}
 \def\ikisatue[#1]#2{\ifdim#1pt>0pt
- \gdef\@reviewd{\Maru{—L}E–³}\else\gdef\@reviewe{—LE\Maru{–³}}\fi
+ \gdef\@reviewd{\Maru{æœ‰}ãƒ»ç„¡}\else\gdef\@reviewe{æœ‰ãƒ»\Maru{ç„¡}}\fi
  \gdef\@ikisatue{#2}} \ikisatue[0]{}
- \def\@reviewe{—LE–³}
+ \def\@reviewe{æœ‰ãƒ»ç„¡}
 %
 \def\returntitle#1{\gdef\@returntitle{#1}} \returntitle{}
 \def\returnbumon#1{\gdef\@returnbumon{#1}} \returnbumon{~~}
-\def\hRONBUN{˜_•¶} \def\hHOUKOKU{•ñ} \def\hNOTE{ƒm[ƒg}
-\def\returnkubun#1{\ifdim#1pt=1pt \gdef\hRONBUN{\Maru{˜_•¶}} \else
- \ifdim#1pt=2pt \gdef\hHOUKOKU{\Maru{•ñ}} \else
- \ifdim#1pt=3pt \gdef\hNOTE{\Maru{ƒm[ƒg}} \fi\fi\fi}
+\def\hRONBUN{è«–æ–‡} \def\hHOUKOKU{å ±å‘Š} \def\hNOTE{ãƒãƒ¼ãƒˆ}
+\def\returnkubun#1{\ifdim#1pt=1pt \gdef\hRONBUN{\Maru{è«–æ–‡}} \else
+ \ifdim#1pt=2pt \gdef\hHOUKOKU{\Maru{å ±å‘Š}} \else
+ \ifdim#1pt=3pt \gdef\hNOTE{\Maru{ãƒãƒ¼ãƒˆ}} \fi\fi\fi}
 \returnkubun{0}
-\def\returndate#1#2{\gdef\@returndate{{\rm #1}~ ”N ~{\rm #2}~ Œ }}
+\def\returndate#1#2{\gdef\@returndate{{\rm #1}~ å¹´ ~{\rm #2}~ æœˆé ƒ}}
 \returndate{~~~}{~~}
 \def\returnno#1#2{\gdef\@returnno{{\rm #1}--{\rm #2}}}
 \returnno{~}{~~~}
@@ -172,33 +172,33 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \def\fax#1{\gdef\@fax{#1}} \fax{}
 \def\member#1{\gdef\@memberID{#1}} \member{~~~}
 \def\email#1{\gdef\@email{#1}} \email{}
-\def\@home{©‘î}
-\def\@office{‹Î–±æ}
-\def\home{\gdef\@home{\Maru{©‘î}}}
-\def\office{\gdef\@office{\Maru{‹Î–±æ}}}
+\def\@home{è‡ªå®…}
+\def\@office{å‹¤å‹™å…ˆ}
+\def\home{\gdef\@home{\Maru{è‡ªå®…}}}
+\def\office{\gdef\@office{\Maru{å‹¤å‹™å…ˆ}}}
 %
-% ‚±‚±‚©‚ç‚ªƒŒƒCƒAƒEƒg‚ÌƒƒCƒ“•”•ª
+% ã“ã“ã‹ã‚‰ãŒãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®ãƒ¡ã‚¤ãƒ³éƒ¨åˆ†
 %
 \def\doit{%
 \begin{center}%
-{\Large\bf “y–ØŠw‰ï˜_•¶W@˜_•¶‘—•t•[}%
+{\Large\bf åœŸæœ¨å­¦ä¼šè«–æ–‡é›†ã€€è«–æ–‡é€ä»˜ç¥¨}%
 \end{center}%
 
 {\bf
 
-\noindent ––±‹Ç‹L“ü—“
+\noindent äº‹å‹™å±€è¨˜å…¥æ¬„
 
 \noindent%
 \begin{tabular*}{173mm}[c]{|c|c|c|c|@{\extracolsep{\fill}}c|} \hline
- ¸“Ç•”–å & ˜_•¶”Ô† & ó•t”NŒ“ú & 1. ˜a•¶ & ˜_@•¶E•ñ@Eƒm[ƒg\\
- ~1~2~3~4~5~6~7~ & No. \hspace{15mm} & \hspace*{10mm} ”N
- \hspace*{8mm} Œ \hspace*{8mm} “ú & 2. ‰p•¶ & “¢@‹cEˆÏˆõ‰ï•ñ \\ \hline
+ æŸ»èª­éƒ¨é–€ & è«–æ–‡ç•ªå· & å—ä»˜å¹´æœˆæ—¥ & 1. å’Œæ–‡ & è«–ã€€æ–‡ãƒ»å ±ã€€å‘Šãƒ»ãƒãƒ¼ãƒˆ\\
+ ~1~2~3~4~5~6~7~ & No. \hspace{15mm} & \hspace*{10mm} å¹´
+ \hspace*{8mm} æœˆ \hspace*{8mm} æ—¥ & 2. è‹±æ–‡ & è¨ã€€è­°ãƒ»å§”å“¡ä¼šå ±å‘Š \\ \hline
 \end{tabular*}%
 
 {%
 \vskip 1mm
 
-\centering ‚±‚±‚©‚ç‰º‚ğ‹L“ü‚µ‚Ä‚­‚¾‚³‚¢
+\centering ã“ã“ã‹ã‚‰ä¸‹ã‚’è¨˜å…¥ã—ã¦ãã ã•ã„
 
 }%
 }
@@ -208,9 +208,9 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \noindent%
 \begin{tabular*}{173mm}[c]%
  {|p{16mm}@{\hspace{5mm}}p{145mm}@{\extracolsep{\fill}}l|} \hline
-  {\bf ˜_•¶‘è–Ú\par (“ú–{Œê)} &
+  {\bf è«–æ–‡é¡Œç›®\par (æ—¥æœ¬èª)} &
  {\renewcommand{\baselinestretch}{.7}\TT\@title} & \\ \hline
-  {\bf \mbox{}~(‰pŒê)\par ~~~} &
+  {\bf \mbox{}~(è‹±èª)\par ~~~} &
  {\renewcommand{\baselinestretch}{.7}\TT\@etitle} & \\ \hline
 \end{tabular*}%
 
@@ -224,13 +224,13 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 %{|l|l|l%@{\extracolsep{\fill}}c
 %|@{\extracolsep{\tabcolsep}}c|} \hline
 {|l|l|c@{\extracolsep{\fill}}|c|}\hline
-  \multicolumn{1}{|c|}{\makebox[7zw]{\bf ’˜Ò–¼}} 
+  \multicolumn{1}{|c|}{\makebox[7zw]{\bf è‘—è€…æ°å}} 
 &
-   \multicolumn{1}{c|}{{\bf –¼‚Ìƒ[ƒ}š’Ô‚è}} 
+   \multicolumn{1}{c|}{{\bf æ°åã®ãƒ­ãƒ¼ãƒå­—ç¶´ã‚Š}} 
 &
-    \multicolumn{1}{c|}{\makebox[65mm]{\bf ‹Î–±æEE–¼}} 
+    \multicolumn{1}{c|}{\makebox[65mm]{\bf å‹¤å‹™å…ˆãƒ»è·å}} 
 & 
-{\bf ‰ïˆõ‹æ•ª} \\ \hline
+{\bf ä¼šå“¡åŒºåˆ†} \\ \hline
  \@author  \\ \hline
  \@authorA \\ \hline
  \@authorB \\ \hline
@@ -256,11 +256,11 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 %\begin{tabular*}{173mm}[c]{|c|c|c|l||l|@{\extracolsep{\fill}}l|}%
 \begin{tabular*}{173mm}[c]{|c|c|c|l||@{\extracolsep{\fill}}l|}%
  \hline
- \rule[-3.5mm]{0mm}{9.5mm}{\scriptsize “Še‹æ•ª} &
+ \rule[-3.5mm]{0mm}{9.5mm}{\scriptsize æŠ•ç¨¿åŒºåˆ†} &
  {%
-  \small \RONBUN\<E\<\HOUKOKU\<E\<\NOTE\<E\<\TOUGI\<E\<\TENBOU} &
+  \small \RONBUN\<ãƒ»\<\HOUKOKU\<ãƒ»\<\NOTE\<ãƒ»\<\TOUGI\<ãƒ»\<\TENBOU} &
 % \raisebox{-.5\@asciinttsize}[0pt][0pt]
-{\footnotesize “Še•”–å} &
+{\footnotesize æŠ•ç¨¿éƒ¨é–€} &
 % \raisebox{-.5\@asciinttsize}[0pt][0pt]
 {%
   \ifdim\@bumon=1pt \MARU{1}\else 1\ \fi
@@ -269,22 +269,22 @@ Partly, adjusted by SANBI Co., Ltd. (C)
   \ifdim\@bumon=4pt \MARU{4}\else 4\ \fi
  \ifdim\@bumon=5pt \MARU{5}\else 5\ \fi
   \ifdim\@bumon=6pt \MARU{6}\else 6\ \fi
-  \ifdim\@bumon=7pt \MARU{7}\else 7\ \fi •”–å} &
+  \ifdim\@bumon=7pt \MARU{7}\else 7\ \fi éƒ¨é–€} &
 % \raisebox{-.5\@asciinttsize}[0pt][0pt]
 {%
-   •›•”–å\<F\<\fukubumonyn (\makebox[1zw]{\rm \@fukubumon})•”–å} %&
+   å‰¯éƒ¨é–€\<ï¼š\<\fukubumonyn (\makebox[1zw]{\rm \@fukubumon})éƒ¨é–€} %&
 % \shortstack[l]{%
-%   \hbox to 3zw{ƒy[ƒW”\hss} \hfill~ \\ ~\hfill {\rm \@totalpage}~•Å}
+%   \hbox to 3zw{ãƒšãƒ¼ã‚¸æ•°\hss} \hfill~ \\ ~\hfill {\rm \@totalpage}~é }
 \\ \hline
-\rule[-3.5mm]{0mm}{9mm}\small •Å”&\multicolumn{4}{l|}{\begin{tabular}{ll}
-\hfill\raisebox{0mm}{\hbox to2zw{\hfill\rm \@totalpage}•Å\<i‚¤‚¿ƒJƒ‰[
-\underline{\hbox to2zw{\hfill\rm\@colorpage}}•Åj
+\rule[-3.5mm]{0mm}{9mm}\small é æ•°&\multicolumn{4}{l|}{\begin{tabular}{ll}
+\hfill\raisebox{0mm}{\hbox to2zw{\hfill\rm \@totalpage}é \<ï¼ˆã†ã¡ã‚«ãƒ©ãƒ¼
+\underline{\hbox to2zw{\hfill\rm\@colorpage}}é ï¼‰
 \<}\,\smash{\rule[-3.25mm]{.4pt}{9.25mm}}&\smash{%
 \raisebox{-1.5mm}{%
 \shortstack[l]{\small
-¦“oÚŒˆ’è‚µ‚½Û‚ÉƒJƒ‰[ˆóü‚·‚é•Å”‚ğ‚²‹L“ü‚­‚¾‚³‚¢D“Šeó\\[-.5mm]
-\small •tŒã‚Ì•ÏX
-‚Í‚Å‚«‚Ü‚¹‚ñD”ï—p‚Í’˜Ò•‰’S8–œ‰~^1•Å‚Æ‚È‚è‚Ü‚·D
+â€»ç™»è¼‰æ±ºå®šã—ãŸéš›ã«ã‚«ãƒ©ãƒ¼å°åˆ·ã™ã‚‹é æ•°ã‚’ã”è¨˜å…¥ãã ã•ã„ï¼æŠ•ç¨¿å—\\[-.5mm]
+\small ä»˜å¾Œã®å¤‰æ›´
+ã¯ã§ãã¾ã›ã‚“ï¼è²»ç”¨ã¯è‘—è€…è² æ‹…8ä¸‡å††ï¼1é ã¨ãªã‚Šã¾ã™ï¼
 }}}
 \\
 \end{tabular}%
@@ -299,8 +299,8 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \noindent%
 \begin{tabular*}{173mm}[c]{|p{143mm}||c@{\extracolsep{\fill}}c|} \hline
 {\small\bf%
- \underline{‰ß‹‚Ì”­•\‚ÌŒoˆÜ (“y–ØŠw‰ï”­s‚Ì‘¼C‘¼Šw‹¦‰ï‚È‚Ç)}}\TB
- & {\bf ¸“Ç‚Ì—L–³} & \\ \hline
+ \underline{éå»ã®ç™ºè¡¨ã®çµŒç·¯ (åœŸæœ¨å­¦ä¼šç™ºè¡Œã®ä»–èªŒï¼Œä»–å­¦å”ä¼šèªŒãªã©)}}\TB
+ & {\bf æŸ»èª­ã®æœ‰ç„¡} & \\ \hline
  \@ikisatua & \@reviewa & \\ \hline
  \@ikisatub & \@reviewb & \\ \hline
  \@ikisatuc & \@reviewc & \\ \hline
@@ -308,33 +308,33 @@ Partly, adjusted by SANBI Co., Ltd. (C)
  \@ikisatue & \@reviewe & \\ \hline
  \multicolumn{2}{|p{163mm}}{%
 \pushtowall{\scriptsize\bf%
-‰ß‹‚É“y–ØŠw‰ï˜_•¶W‚É“Še‚µC
-•Ô‹p‚Ü‚½‚Í’˜Òæ‰º‚°‚µ‚½˜_•¶“™‚ğC³‚µ‚Ä
-Ä“Še‚·‚éê‡‚É‚ÍC‘O‰ñ‚Ì˜_•¶‘è–Ú‚ğ‘‚¢‚Ä‰º‚³‚¢D
+éå»ã«åœŸæœ¨å­¦ä¼šè«–æ–‡é›†ã«æŠ•ç¨¿ã—ï¼Œ
+è¿”å´ã¾ãŸã¯è‘—è€…å–ä¸‹ã’ã—ãŸè«–æ–‡ç­‰ã‚’ä¿®æ­£ã—ã¦
+å†æŠ•ç¨¿ã™ã‚‹å ´åˆã«ã¯ï¼Œå‰å›ã®è«–æ–‡é¡Œç›®ã‚’æ›¸ã„ã¦ä¸‹ã•ã„ï¼
 }} & \\
 %
  \multicolumn{2}{|p{163mm}}{%
- {\bf •”–å ({\rm \@returnbumon})~~˜_•¶‘è–ÚF} {\small \@returntitle}} & \\
+ {\bf éƒ¨é–€ ({\rm \@returnbumon})~~è«–æ–‡é¡Œç›®ï¼š} {\small \@returntitle}} & \\
  \multicolumn{2}{|p{163mm}}{%
- {\bf ‘O‰ñ‚Ì“Še‹æ•ª} ({\hRONBUN}E{\hHOUKOKU}E{\hNOTE}) \hfill
- {\bf ‘O‰ñ“ŠeŠú}~\@returndate {\bf @˜_•¶”Ô†}(\@returnno)} & \\ \hline
+ {\bf å‰å›ã®æŠ•ç¨¿åŒºåˆ†} ({\hRONBUN}ãƒ»{\hHOUKOKU}ãƒ»{\hNOTE}) \hfill
+ {\bf å‰å›æŠ•ç¨¿æ™‚æœŸ}~\@returndate {\bf ã€€è«–æ–‡ç•ªå·}(\@returnno)} & \\ \hline
 \end{tabular*}%
 
 \vskip 0.5mm
 
-\noindent {\small\bf ¦‘¼‚Ö‚Ì“¯“Še‚Í”F‚ß‚ç‚ê‚Ü‚¹‚ñD}%
+\noindent {\small\bf â€»ä»–èªŒã¸ã®åŒæ™‚æŠ•ç¨¿ã¯èªã‚ã‚‰ã‚Œã¾ã›ã‚“ï¼}%
 
 \vskip 2.5mm
 
 \noindent%
 \begin{tabular*}{173mm}[c]{|l|p{70mm}|c|l@{\extracolsep{\fill}}c|} \hline
- \multicolumn{5}{|l|}{{\bf ˆÈã‚Ì‹Lq–€‚Ì“à—e‚É‘Šˆá‚ ‚è‚Ü‚¹‚ñ}} \\\hline
-% \multicolumn{5}{|l|}{{\bf ‚Ü‚½C“oÚŒˆ’è‚µ‚½ê‡‚É‚ÍC–{˜_•¶‚Ì’˜ìŒ ‚ğ“y–ØŠw‰ï‚Ö‹A‘®i÷“nj‚·‚é‚±‚Æ‚É“¯ˆÓ‚µ‚Ü‚·D}} \\ \hline
-  & & {\bf –¼} & \hspace{50mm} {\footnotesize\bf ˆó} & \\ \cline{3-5}
+ \multicolumn{5}{|l|}{{\bf ä»¥ä¸Šã®è¨˜è¿°äº‹é …ã®å†…å®¹ã«ç›¸é•ã‚ã‚Šã¾ã›ã‚“}} \\\hline
+% \multicolumn{5}{|l|}{{\bf ã¾ãŸï¼Œç™»è¼‰æ±ºå®šã—ãŸå ´åˆã«ã¯ï¼Œæœ¬è«–æ–‡ã®è‘—ä½œæ¨©ã‚’åœŸæœ¨å­¦ä¼šã¸å¸°å±ï¼ˆè­²æ¸¡ï¼‰ã™ã‚‹ã“ã¨ã«åŒæ„ã—ã¾ã™ï¼}} \\ \hline
+  & & {\bf ç½²å} & \hspace{50mm} {\footnotesize\bf å°} & \\ \cline{3-5}
   & & {\bf TEL} & {\rm \@telephone}%
-              \ifx\@extension\empty\else “àü {\rm \@extension}\fi & \\
+              \ifx\@extension\empty\else å†…ç·š {\rm \@extension}\fi & \\
     \cline{3-5}%
-  \raisebox{0pt}[0pt]{{\bf \shortstack[l]{‘ã•\Ò \\ ˜A—æZŠ \\ ‹Î–±æ \\ Š‘®}}}
+  \raisebox{0pt}[0pt]{{\bf \shortstack[l]{ä»£è¡¨è€… \\ é€£çµ¡å…ˆä½æ‰€ \\ å‹¤å‹™å…ˆ \\ æ‰€å±}}}
   & \raisebox{0pt}[0pt]{\parbox[b]{68mm}{\normalsize \@address}} &
    {\bf FAX} & {\rm \@fax} & \\ \hline
   {\tt Email} & \multicolumn{3}{|l}{{\footnotesize\tt \@email}} & \\ \hline
@@ -343,18 +343,18 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 
 \small\bf
 \noindent
-¦‰ïˆõ‹æ•ªC“Še‹æ•ªC“Še•”–åC•›•”–å‚Ì—L–³‚É‚Â‚¢‚Ä‚ÍC‚¢‚¸‚ê‚©‚É›‚ğ•t‚¯‚Ä
-‰º‚³‚¢D\\%[-2mm]
-¦–{•[‚ÍA4”Å‚Æ‚µC˜_•¶‚Ìæ“ª‚Éƒzƒ`ƒLƒX—¯‚ß‚µ‚Ä‰º‚³‚¢D\\
-¦“oÚŒˆ’èŒãCˆóü—pŒ´e’ño‚É’˜ìŒ ÷“n‘‚ğ•Ê“r‚²’ño‚¢‚½‚¾‚«‚Ü‚·‚Ì
-‚Å‘‚ß‚É€”õ‚µ‚Ä‚¨‚¢‚Ä‚­‚¾‚³‚¢
+â€»ä¼šå“¡åŒºåˆ†ï¼ŒæŠ•ç¨¿åŒºåˆ†ï¼ŒæŠ•ç¨¿éƒ¨é–€ï¼Œå‰¯éƒ¨é–€ã®æœ‰ç„¡ã«ã¤ã„ã¦ã¯ï¼Œã„ãšã‚Œã‹ã«â—‹ã‚’ä»˜ã‘ã¦
+ä¸‹ã•ã„ï¼\\%[-2mm]
+â€»æœ¬ç¥¨ã¯A4ç‰ˆã¨ã—ï¼Œè«–æ–‡ã®å…ˆé ­ã«ãƒ›ãƒã‚­ã‚¹ç•™ã‚ã—ã¦ä¸‹ã•ã„ï¼\\
+â€»ç™»è¼‰æ±ºå®šå¾Œï¼Œå°åˆ·ç”¨åŸç¨¿æå‡ºæ™‚ã«è‘—ä½œæ¨©è­²æ¸¡æ›¸ã‚’åˆ¥é€”ã”æå‡ºã„ãŸã ãã¾ã™ã®
+ã§æ—©ã‚ã«æº–å‚™ã—ã¦ãŠã„ã¦ãã ã•ã„
 }
 
 \endinput
 %%%%%%%%%%%%%%%%%%%%%% end of soufuhyo.sty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% “y–ØŠw‰ï˜_•¶W‘—•t•[ì¬@ƒTƒ“ƒvƒ‹ƒ\[ƒX
+% åœŸæœ¨å­¦ä¼šè«–æ–‡é›†é€ä»˜ç¥¨ä½œæˆã€€ã‚µãƒ³ãƒ—ãƒ«ã‚½ãƒ¼ã‚¹
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifx\gtfam\undefined
@@ -364,116 +364,116 @@ Partly, adjusted by SANBI Co., Ltd. (C)
 \fi
 \begin{document}
 
-% ‘è–Ú
+% é¡Œç›®
 
-\title{\Large “y–ØHŠw‚É‚¨‚¯‚é“y–ØŠw‰ï˜_•¶W‚Ì–ğŠ„‚Æ‚»‚Ì”Å‰ºŒ´e’ño‚Ö‚Ì
-ˆÚs‚¨‚æ‚Ñ“dqo”Å‚Ö‚Ì«—ˆŒ©’Ê‚µ} % “ú–{Œê‘è–Ú
+\title{\Large åœŸæœ¨å·¥å­¦ã«ãŠã‘ã‚‹åœŸæœ¨å­¦ä¼šè«–æ–‡é›†ã®å½¹å‰²ã¨ãã®ç‰ˆä¸‹åŸç¨¿æå‡ºã¸ã®
+ç§»è¡ŒãŠã‚ˆã³é›»å­å‡ºç‰ˆã¸ã®å°†æ¥è¦‹é€šã—} % æ—¥æœ¬èªé¡Œç›®
 
 \etitle{\large Future of Publication of JSCE Journals and a New
-Form of Publishing with Multi Media} % ‰pŒê‘è–Ú
+Form of Publishing with Multi Media} % è‹±èªé¡Œç›®
 
-% ’˜Òƒf[ƒ^
-%   \author[‰ïˆõ]{©–¼}{LAST NAME, First name}{ŠwˆÊ}{‹Î–±æEE–¼}
-%  ‰ïˆõ—“
-%         ³‰ïˆõ@ \author{©–¼}{LAST NAME, ....
-%   ƒtƒFƒ[‰ïˆõ   \author[1]{©–¼}{LAST NAME, ....
-%       Šw¶‰ïˆõ   \author[2]{©–¼}{LAST NAME, ....
-%         ”ñ‰ïˆõ@ \author[3]{©–¼}{LAST NAME, ....
+% è‘—è€…ãƒ‡ãƒ¼ã‚¿
+%   \author[ä¼šå“¡]{å§“å}{LAST NAME, First name}{å­¦ä½}{å‹¤å‹™å…ˆãƒ»è·å}
+%  ä¼šå“¡æ¬„
+%         æ­£ä¼šå“¡ã€€ \author{å§“å}{LAST NAME, ....
+%   ãƒ•ã‚§ãƒ­ãƒ¼ä¼šå“¡   \author[1]{å§“å}{LAST NAME, ....
+%       å­¦ç”Ÿä¼šå“¡   \author[2]{å§“å}{LAST NAME, ....
+%         éä¼šå“¡ã€€ \author[3]{å§“å}{LAST NAME, ....
 %
-%  ‘æˆê’˜Ò‚Ì‚İCÅŒã‚É‰ïˆõ”Ô†‚ª•K—v
-\author{Œšİ‘¾˜Y}{KENSETSU, Taro}{H”}%
- {Œšİ‘åŠwHŠw•”ŠÂ‹«“y–ØHŠw‰ÈE‹³ö}{1234567}
+%  ç¬¬ä¸€è‘—è€…ã®ã¿ï¼Œæœ€å¾Œã«ä¼šå“¡ç•ªå·ãŒå¿…è¦
+\author{å»ºè¨­å¤ªéƒ}{KENSETSU, Taro}{å·¥åš}%
+ {å»ºè¨­å¤§å­¦å·¥å­¦éƒ¨ç’°å¢ƒåœŸæœ¨å·¥å­¦ç§‘ãƒ»æ•™æˆ}{1234567}
 
-%  ‘æ“ñ’˜Ò
-\authorA[3]{“y–Ø‰Ôq}{DOBOKU, Hanako}{}{ŒšİƒRƒ“ƒTƒ‹ƒ^ƒ“ƒgEå”C‹Zt}
+%  ç¬¬äºŒè‘—è€…
+\authorA[3]{åœŸæœ¨èŠ±å­}{DOBOKU, Hanako}{}{å»ºè¨­ã‚³ãƒ³ã‚µãƒ«ã‚¿ãƒ³ãƒˆãƒ»ä¸»ä»»æŠ€å¸«}
 
-%  ‘æO’˜Ò
-\authorB[1]{’n‹…@‰h}{CHIKYU, Sakae}{Ph D.}{–Ø“y—‰»ŠwŒ¤‹†ŠEå”C}
+%  ç¬¬ä¸‰è‘—è€…
+\authorB[1]{åœ°çƒã€€æ „}{CHIKYU, Sakae}{Ph D.}{æœ¨åœŸç†åŒ–å­¦ç ”ç©¶æ‰€ãƒ»ä¸»ä»»}
 
-%  ‘æl’˜Ò
-\authorC[2]{ŠÂ‹«OŒÜ˜Y}{KANKYO, Sangoro}{HC}{Œšİ‘åŠwHŠw•”“y–ØHŠw‰È}
+%  ç¬¬å››è‘—è€…
+\authorC[2]{ç’°å¢ƒä¸‰äº”éƒ}{KANKYO, Sangoro}{å·¥ä¿®}{å»ºè¨­å¤§å­¦å·¥å­¦éƒ¨åœŸæœ¨å·¥å­¦ç§‘}
 
-%  ‘æŒÜ’˜Ò@‚¢‚È‚¢‚Æ‚«‚ÍƒRƒƒ“ƒgƒAƒEƒg
+%  ç¬¬äº”è‘—è€…ã€€ã„ãªã„ã¨ãã¯ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆ
 %  \authorD{}{}{}{}
 
-%  ‘æ˜Z’˜Ò
+%  ç¬¬å…­è‘—è€…
 %  \authorE{}{}{}{}
 
-% “Še‹æ•ªF ˜_•¶=1, •ñ=2, ƒm[ƒg=3, “¢‹c=4, Œ¤‹†“W–]=5
+% æŠ•ç¨¿åŒºåˆ†ï¼š è«–æ–‡=1, å ±å‘Š=2, ãƒãƒ¼ãƒˆ=3, è¨è­°=4, ç ”ç©¶å±•æœ›=5
 
 \kubun{2}
 
-% “Še•”–åF I ‚©‚ç VII ‚Ü‚Å‚ğZ—p”š‚Å
+% æŠ•ç¨¿éƒ¨é–€ï¼š I ã‹ã‚‰ VII ã¾ã§ã‚’ç®—ç”¨æ•°å­—ã§
 
 \bumon{5}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ˆÈ‰º‚Ì€–Ú‚ÅŠY“–‚µ‚È‚¢‚à‚Ì‚ÍCƒuƒ‰ƒ“ƒN‚É‚¹‚¸CƒRƒƒ“ƒgƒAƒEƒg‚µ‚Ü‚· %
+% ä»¥ä¸‹ã®é …ç›®ã§è©²å½“ã—ãªã„ã‚‚ã®ã¯ï¼Œãƒ–ãƒ©ãƒ³ã‚¯ã«ã›ãšï¼Œã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆã—ã¾ã™ %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% •¡”‚Ì•”–å‚ÉŠÖŒW‚µC¸“Ç‚ğã‚Ì•”–åˆÈŠO‚É‚àŠó–]‚·‚éê‡‚É
+% è¤‡æ•°ã®éƒ¨é–€ã«é–¢ä¿‚ã—ï¼ŒæŸ»èª­ã‚’ä¸Šã®éƒ¨é–€ä»¥å¤–ã«ã‚‚å¸Œæœ›ã™ã‚‹å ´åˆã«
 
 \fukubumon{3}
 
-% ‰ß‹‚Ì”­•\‚ÌŒoˆÜ [0]‚ÍR¸–³‚µC[1]‚ÍR¸—L‚è‚Å‚·D
+% éå»ã®ç™ºè¡¨ã®çµŒç·¯ [0]ã¯å¯©æŸ»ç„¡ã—ï¼Œ[1]ã¯å¯©æŸ»æœ‰ã‚Šã§ã™ï¼
 
-\ikisatua[0]{‚±‚±‚É‚Í‰ß‹‚ÌŒoˆÜ‚ğ‘‚«‚Ü‚·Da}
-\ikisatub[1]{‚±‚±‚É‚Í‰ß‹‚ÌŒoˆÜ‚ğ‘‚«‚Ü‚·Db}
-\ikisatuc[0]{‚±‚±‚É‚Í‰ß‹‚ÌŒoˆÜ‚ğ‘‚«‚Ü‚·Dc}
-%\ikisatud[1]{‚±‚±‚É‚Í‰ß‹‚ÌŒoˆÜ‚ğ‘‚«‚Ü‚·Dd}
-%\ikisatue[0]{‚±‚±‚É‚Í‰ß‹‚ÌŒoˆÜ‚ğ‘‚«‚Ü‚·De}
+\ikisatua[0]{ã“ã“ã«ã¯éå»ã®çµŒç·¯ã‚’æ›¸ãã¾ã™ï¼a}
+\ikisatub[1]{ã“ã“ã«ã¯éå»ã®çµŒç·¯ã‚’æ›¸ãã¾ã™ï¼b}
+\ikisatuc[0]{ã“ã“ã«ã¯éå»ã®çµŒç·¯ã‚’æ›¸ãã¾ã™ï¼c}
+%\ikisatud[1]{ã“ã“ã«ã¯éå»ã®çµŒç·¯ã‚’æ›¸ãã¾ã™ï¼d}
+%\ikisatue[0]{ã“ã“ã«ã¯éå»ã®çµŒç·¯ã‚’æ›¸ãã¾ã™ï¼e}
 
-% ‚±‚Ì˜_•¶‚ª‚©‚Â‚Ä•Ô‹p‚É‚È‚Á‚½‚à‚Ì‚Ìê‡
+% ã“ã®è«–æ–‡ãŒã‹ã¤ã¦è¿”å´ã«ãªã£ãŸã‚‚ã®ã®å ´åˆ
 %
-% •Ô‹p‚³‚ê‚½˜_•¶‚Ì‘è–Ú
+% è¿”å´ã•ã‚ŒãŸè«–æ–‡ã®é¡Œç›®
 
-\returntitle{‚±‚Ì˜_•¶‚ÌŒ³‚Æ‚È‚Á‚½‚Æ‚±‚ë‚Ì•Ô‹p‚³‚ê‚½˜_•¶‘è–Ú‚Å‚·}
+\returntitle{ã“ã®è«–æ–‡ã®å…ƒã¨ãªã£ãŸã¨ã“ã‚ã®è¿”å´ã•ã‚ŒãŸè«–æ–‡é¡Œç›®ã§ã™}
 
-% ‚»‚Ì‚Æ‚«‚Ì•”–å
+% ãã®ã¨ãã®éƒ¨é–€
 
 \returnbumon{5}
 
-% “Še‹æ•ªF˜_•¶=1, •ñ=2, ƒm[ƒg=3
+% æŠ•ç¨¿åŒºåˆ†ï¼šè«–æ–‡=1, å ±å‘Š=2, ãƒãƒ¼ãƒˆ=3
 
 \returnkubun{2}
 
-% “Še‚µ‚½Šú‚Ì”N‚ÆŒ‚ğ \returndate{¼—ï”N}{Œ} ‚Å
+% æŠ•ç¨¿ã—ãŸæ™‚æœŸã®å¹´ã¨æœˆã‚’ \returndate{è¥¿æš¦å¹´}{æœˆ} ã§
 % ^^^^^^^^
 
 \returndate{1993}{9}
 
-% “Še‚µ‚½Šú‚Ì˜_•¶”Ô† (a - b) \returnno{a}{b} ‚Å
+% æŠ•ç¨¿ã—ãŸæœŸã®è«–æ–‡ç•ªå· (a - b) \returnno{a}{b} ã§
 % ^^^^^^^^
 
 \returnno{1}{999}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ˆÈ‰º‚Ì€–Ú‚Í‚·‚×‚Ä‹L“ü‚·‚é %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ä»¥ä¸‹ã®é …ç›®ã¯ã™ã¹ã¦è¨˜å…¥ã™ã‚‹ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ‘S•Å”‚ğZ—p”š‚Å
+% å…¨é æ•°ã‚’ç®—ç”¨æ•°å­—ã§
 
 \totalpage{8}
 
-% ˜A—Ò‚ÌZŠ‚ğ‘‚«‚Ü‚·D \par ‚ª‹–‚³‚ê‚Ü‚·D‚½‚¾‚µ 2 sˆÈ“à‚ÉD
+% é€£çµ¡è€…ã®ä½æ‰€ã‚’æ›¸ãã¾ã™ï¼ \par ãŒè¨±ã•ã‚Œã¾ã™ï¼ãŸã ã— 2 è¡Œä»¥å†…ã«ï¼
 
-\address{§ 160 “Œ‹“sVh‹æl’Jˆê’š–Ú–³”Ô’n\par
- Œšİ‘åŠwHŠw•”“y–ØHŠw‰È\par
- Œšİ‘¾˜Y}
+\address{ã€’ 160 æ±äº¬éƒ½æ–°å®¿åŒºå››è°·ä¸€ä¸ç›®ç„¡ç•ªåœ°\par
+ å»ºè¨­å¤§å­¦å·¥å­¦éƒ¨åœŸæœ¨å·¥å­¦ç§‘\par
+ å»ºè¨­å¤ªéƒ}
 
-% “d˜b”Ô†F@“àü‚ª‚ ‚é‚É‚Í \telephone[“àü]{‘ã•\“d˜b}
+% é›»è©±ç•ªå·ï¼šã€€å†…ç·šãŒã‚ã‚‹æ™‚ã«ã¯ \telephone[å†…ç·š]{ä»£è¡¨é›»è©±}
 
 \telephone[2468]{022-222-1800}
 
-% FAX ”Ô†
+% FAX ç•ªå·
 
 \fax{022-268-3689}
 
-% Email ƒAƒhƒŒƒX
+% Email ã‚¢ãƒ‰ãƒ¬ã‚¹
 
 \email{hoge@achara.domain.univ.ac.jp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ‚±‚±‚Ü‚Å‚Å STOP I@‚±‚êˆÈ‰º‚àè‚ğ“ü‚ê‚È‚¢‚±‚ÆD
+% ã“ã“ã¾ã§ã§ STOP ï¼ã€€ã“ã‚Œä»¥ä¸‹ã‚‚æ‰‹ã‚’å…¥ã‚Œãªã„ã“ã¨ï¼
 \doit
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

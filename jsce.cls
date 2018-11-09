@@ -124,7 +124,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
   \@bannertoken\@empty
   \maketombowbox}
 \DeclareOption{tate}{%
-  \AtBeginDocument{\tate\message{sc‘gƒ‚[ƒht}%
+  \AtBeginDocument{\tate\message{ã€Šç¸¦çµ„ãƒ¢ãƒ¼ãƒ‰ã€‹}%
                    \adjustbaseline}%
 }
 \DeclareOption{oneside}{\@twosidefalse}
@@ -1107,43 +1107,43 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
   \kern 2.6\p@}
 \newcommand\@makefntext[1]{\parindent 1em
   \noindent\hbox to 1.8em{\hss\@makefnmark}#1}
-\newif\if¼—ï \¼—ïfalse
-\def\¼—ï{\¼—ïtrue}
-\def\˜a—ï{\¼—ïfalse}
+\newif\ifè¥¿æš¦ \è¥¿æš¦false
+\def\è¥¿æš¦{\è¥¿æš¦true}
+\def\å’Œæš¦{\è¥¿æš¦false}
 \newcount\heisei \heisei\year \advance\heisei-1988\relax
 \def\today{{%
   \iftdir
-    \if¼—ï
-      \kansuji\number\year ”N
-      \kansuji\number\month Œ
-      \kansuji\number\day “ú
+    \ifè¥¿æš¦
+      \kansuji\number\year å¹´
+      \kansuji\number\month æœˆ
+      \kansuji\number\day æ—¥
     \else
-      •½¬\ifnum\heisei=1 Œ³”N\else\kansuji\number\heisei ”N\fi
-      \kansuji\number\month Œ
-      \kansuji\number\day “ú
+      å¹³æˆ\ifnum\heisei=1 å…ƒå¹´\else\kansuji\number\heisei å¹´\fi
+      \kansuji\number\month æœˆ
+      \kansuji\number\day æ—¥
     \fi
   \else
-    \if¼—ï
-      \number\year~”N
-      \number\month~Œ
-      \number\day~“ú
+    \ifè¥¿æš¦
+      \number\year~å¹´
+      \number\month~æœˆ
+      \number\day~æ—¥
     \else
-      •½¬\ifnum\heisei=1 Œ³”N\else\number\heisei~”N\fi
-      \number\month~Œ
-      \number\day~“ú
+      å¹³æˆ\ifnum\heisei=1 å…ƒå¹´\else\number\heisei~å¹´\fi
+      \number\month~æœˆ
+      \number\day~æ—¥
     \fi
   \fi}}
-\newcommand{\prepartname}{‘æ}
-\newcommand{\postpartname}{•”}
-\newcommand{\contentsname}{–Ú Ÿ}
-\newcommand{\listfigurename}{} –Ú Ÿ}
-\newcommand{\listtablename}{•\ –Ú Ÿ}
-\newcommand{\refname}{Ql•¶Œ£}
-\newcommand{\indexname}{õ ˆø}
-\newcommand{\figurename}{}}
-\newcommand{\tablename}{•\}
-\newcommand{\appendixname}{•t ˜^}
-\newcommand{\abstractname}{ŠT —v}
+\newcommand{\prepartname}{ç¬¬}
+\newcommand{\postpartname}{éƒ¨}
+\newcommand{\contentsname}{ç›® æ¬¡}
+\newcommand{\listfigurename}{å›³ ç›® æ¬¡}
+\newcommand{\listtablename}{è¡¨ ç›® æ¬¡}
+\newcommand{\refname}{å‚è€ƒæ–‡çŒ®}
+\newcommand{\indexname}{ç´¢ å¼•}
+\newcommand{\figurename}{å›³}
+\newcommand{\tablename}{è¡¨}
+\newcommand{\appendixname}{ä»˜ éŒ²}
+\newcommand{\abstractname}{æ¦‚ è¦}
 
 
 
@@ -1176,10 +1176,10 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
   \setlength\paperheight {210mm}
   \setlength\paperwidth  {148mm}
 
-%% “V’n¶‰E’†‰›
-%\evensidemargin=-8.375mm%-25.375mm%    ¬Œû 17mm
+%% å¤©åœ°å·¦å³ä¸­å¤®
+%\evensidemargin=-8.375mm%-25.375mm%    å°å£ 17mm
 %\oddsidemargin=-8.375mm%-15mm%-7mm%   
-%\topmargin=-11.75mm%          “V 21mm
+%\topmargin=-11.75mm%          å¤© 21mm
 
 
 
@@ -1297,7 +1297,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 
 %% jsce-man.tex 
 %% \def\CL{\hbox{\xpt\raisebox{.2ex}[0pt][0pt]{{\sc c}}\kern-1.4ex{\xipt\sl L}}}
-%% c L ‚ğd‚Ë‚é‹L†‚ÌƒtƒHƒ“ƒgƒTƒCƒYF‚¤‚Ü‚­‚¢‚©‚È‚¢I
+%% c L ã‚’é‡ã­ã‚‹è¨˜å·ã®ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºï¼šã†ã¾ãã„ã‹ãªã„ï¼
 \font\xpt=cmr10 at 10pt
 \font\xipt=cmr10 at 11pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1354,31 +1354,31 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 
 
 %
-%\def\figurename{}\mbox{}--}
-%\def\tablename{•\\mbox{}--}
-%\def\photoname{Ê^\mbox{}--}
-%\def\figuresname{}\mbox{}--}
-%\def\tablesname{•\\mbox{}--}
-%\def\photosname{Ê^\mbox{}--}
-%\def\@receivename{\ ó•t}
-%\def\appendixname{•t˜^}
+%\def\figurename{å›³\mbox{}--}
+%\def\tablename{è¡¨\mbox{}--}
+%\def\photoname{å†™çœŸ\mbox{}--}
+%\def\figuresname{å›³\mbox{}--}
+%\def\tablesname{è¡¨\mbox{}--}
+%\def\photosname{å†™çœŸ\mbox{}--}
+%\def\@receivename{\ å—ä»˜}
+%\def\appendixname{ä»˜éŒ²}
 %\def\appendixsectionname{\Roman{section}}
-%\def\refname{Ql•¶Œ£}
+%\def\refname{å‚è€ƒæ–‡çŒ®}
 
 
-\renewcommand{\figurename}{}\nobreak--}
-\renewcommand{\tablename}{•\\nobreak--}
-\newcommand{\photoname}{Ê^\nobreak--}
+\renewcommand{\figurename}{å›³\nobreak--}
+\renewcommand{\tablename}{è¡¨\nobreak--}
+\newcommand{\photoname}{å†™çœŸ\nobreak--}
 
-\newcommand{\figuresname}{}\nobreak--}
-\newcommand{\tablesname}{•\\nobreak--}
-\newcommand{\photosname}{Ê^\nobreak--}
+\newcommand{\figuresname}{å›³\nobreak--}
+\newcommand{\tablesname}{è¡¨\nobreak--}
+\newcommand{\photosname}{å†™çœŸ\nobreak--}
 
-\newcommand{\@receivename}{\ ó•t}
-\renewcommand{\appendixname}{•t˜^}
+\newcommand{\@receivename}{\ å—ä»˜}
+\renewcommand{\appendixname}{ä»˜éŒ²}
 \newcommand{\appendixsectionname}{\Roman{section}}
-\renewcommand{\refname}{Ql•¶Œ£}
-\newcommand{\ackname}{Ó«:}
+\renewcommand{\refname}{å‚è€ƒæ–‡çŒ®}
+\newcommand{\ackname}{è¬è¾:}
 
 
 %
@@ -1521,7 +1521,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 %%     \@fromenglishpage{s}---\@toenglishpage{s}, \@year~\@englishmonth
 %     \@fromenglishpage---\@toenglishpage, \@year~\@englishmonth%CHANGED
 %  \else
-%   “y–ØŠw‰ï˜_•¶W No.\@numberofpub/\@fieldnumber--\@numberoffieldnumber,
+%   åœŸæœ¨å­¦ä¼šè«–æ–‡é›† No.\@numberofpub/\@fieldnumber--\@numberoffieldnumber,
 %   pp.\@frompage--\@topage, \@year.\@month
 %  \fi}\def\@oddfoot{\reset@font\xpt\rm\hfil\thepage
 %%   \ifEN@LISH%
@@ -1561,7 +1561,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
    No.\@numberofjournal, %
      \@fromenglishpage---\@toenglishpage, \@year~\@englishmonth%CHANGED
   \else
-   “y–ØŠw‰ï˜_•¶W No.\@numberofpub/\@fieldnumber--\@numberoffieldnumber,
+   åœŸæœ¨å­¦ä¼šè«–æ–‡é›† No.\@numberofpub/\@fieldnumber--\@numberoffieldnumber,
    pp.\@frompage--\@topage, \@year.\@month
   \fi\@Rtop}%
 \def\@evenhead{\@Ltop\hfil\@Rtop}%
@@ -1602,8 +1602,8 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \def\fontkeywords{}
 \long\def\abstract#1{\gdef\@abstract{#1}}
 \def\keywords#1{\gdef\@keywords{#1}}
-% \def\keywordsname{\fontkeywords Key Words :} % cmbxti ‚¶‚á‚È‚­‚µ‚½ JSCE
-\def\keywordsname{\textbf{\textit Key Words:}} % ƒZƒ~ƒRƒƒ“‘O•s—v‚È‚Í‚¸H
+% \def\keywordsname{\fontkeywords Key Words :} % cmbxti ã˜ã‚ƒãªãã—ãŸ JSCE
+\def\keywordsname{\textbf{\textit Key Words:}} % ã‚»ãƒŸã‚³ãƒ­ãƒ³å‰ä¸è¦ãªã¯ãšï¼Ÿ
 %
 % \maketitle
 %
@@ -1642,7 +1642,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 %
    \setcounter{footnote}{0}%
 %    {\footnotesize\baselineskip3.5mm \@thanks}% original
-    {\footnotesize\baselineskip3.5mm \@thanks}% sŠÔ­‚µ‹·‚¢‚Ì‚Å’²® v1.2
+    {\footnotesize\baselineskip3.5mm \@thanks}% è¡Œé–“å°‘ã—ç‹­ã„ã®ã§èª¿æ•´ v1.2
    \end{ctrindent}
 %
   \vskip 9mm % cheating
@@ -1684,12 +1684,12 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 
 
 \def\@Mfor#1:=#2\do#3{\edef\@fortmp{#2}\ifx\@fortmp\@empty \else
-    \expandafter\@Mforloop#2E\@nilE\@nil\@@#1{#3}\fi}
+    \expandafter\@Mforloop#2ãƒ»\@nilãƒ»\@nil\@@#1{#3}\fi}
 
-\def\@Mforloop#1E#2E#3\@@#4#5{\def#4{#1}\ifx #4\@nnil \else
+\def\@Mforloop#1ãƒ»#2ãƒ»#3\@@#4#5{\def#4{#1}\ifx #4\@nnil \else
        #5\def#4{#2}\ifx #4\@nnil \else#5\@Miforloop #3\@@#4{#5}\fi\fi}
 
-\def\@Miforloop#1E#2\@@#3#4{\def#3{#1}\ifx #3\@nnil 
+\def\@Miforloop#1ãƒ»#2\@@#3#4{\def#3{#1}\ifx #3\@nnil 
        \let\@nextwhile=\@fornoop \else
       #4\relax\let\@nextwhile=\@Miforloop\fi\@nextwhile#2\@@#3{#4}}
 
@@ -1712,7 +1712,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
  \ifnum\c@choshai<1\relax \expandafter\Guest\member
 \else
 \ifnum\c@choshai<2\relax \member\space
-\else \expandafter\Guest\member\makebox[1zw]{E}%
+\else \expandafter\Guest\member\makebox[1zw]{ãƒ»}%
 %
 \fi\fi
 \else
@@ -1720,13 +1720,13 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \ifnum\thechoshaii >1
 %
 \ifnum\c@choshaii=\c@choshai 
-\expandafter\Guest\member\makebox[1zw]{E}%\space and
+\expandafter\Guest\member\makebox[1zw]{ãƒ»}%\space and
 \else 
 \expandafter\Guest\member%
 \fi
 \else%%%%%%%%%%
 \ifnum\c@choshaii=\c@choshai 
-\expandafter\Guest\member\makebox[1zw]{E}%\space and
+\expandafter\Guest\member\makebox[1zw]{ãƒ»}%\space and
 \else 
 \expandafter\Guest\member%
 \fi
@@ -1735,12 +1735,12 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \fi
 }}
 
-%%% \long ‚ğ•t‚¯‚½
+%%% \long ã‚’ä»˜ã‘ãŸ
 %\long\def\thanks#1{\footnotemark\begingroup
 %\def\protect{\noexpand\protect\noexpand}\xdef\@thanks{\@thanks
 %  \protect\footnotemark#1\protect\par}\endgroup\ignorespaces}
 
-%%% email‘Î‰ ‹y‚Ñ¡Œãurl‚ğ—\‘ª‚µ‚Ä ~‚Ì§Œä
+%%% emailå¯¾å¿œ åŠã³ä»Šå¾Œurlã‚’äºˆæ¸¬ã—ã¦ ~ã®åˆ¶å¾¡
 \long\def\thanks#1{{\def~{\noexpand~}\footnotemark\begingroup
 \def\protect{\noexpand\protect\noexpand}\xdef\@thanks{\@thanks
   \protect\footnotemark#1\protect\par}\endgroup}\ignorespaces}
@@ -1896,15 +1896,15 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 
 
 %
-% \label{} ‚¾‚ÆƒsƒŠƒIƒh‚ª•t‚­‚Ì‚ÅEEE
+% \label{} ã ã¨ãƒ”ãƒªã‚ªãƒ‰ãŒä»˜ãã®ã§ãƒ»ãƒ»ãƒ»
 % \def\sectionlabel#1{\edef\@arabicsetion{\@arabic\c@section}%
 %  \let\@currentlabel\@arabicsetion \label{#1}}
-% section ‚Ì label ‚ğƒsƒŠƒIƒh–³‚µ‚Åˆø—p
+% section ã® label ã‚’ãƒ”ãƒªã‚ªãƒ‰ç„¡ã—ã§å¼•ç”¨
 \def\@Ref@X#1.{\def\@@RefJSCE{#1}}
 \def\@JSCEref#1#2{%
  \ifx#1\relax ?? \else\edef\@RefJSCE{\ref{#2}}\expandafter\@Ref@X\@RefJSCE \@@RefJSCE\fi}
 \def\Ref#1{\expandafter\@JSCEref\csname r@#1\endcsname{#1}}
-% ƒGƒ‰[ƒƒbƒZ[ƒW‚Ío‚µ‚Ä‚È‚¢‚ªC‚ÜC•’Ê“ñ‰ñ‚ÍƒRƒ“ƒpƒCƒ‹‚·‚é‚¾‚ë‚¤EEE
+% ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯å‡ºã—ã¦ãªã„ãŒï¼Œã¾ï¼Œæ™®é€šäºŒå›ã¯ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã™ã‚‹ã ã‚ã†ãƒ»ãƒ»ãƒ»
 
 %
 % adjust \ref spacing in Japanese
@@ -1920,7 +1920,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \protect\hangindent=16.5pt\hangafter1%
 #1}
 
-%% ‚±‚±‚Ü‚Å
+%% ã“ã“ã¾ã§
 
 %
 % MATH
@@ -1974,7 +1974,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
   \@tempa \if@eqnsw\@manyeqnnum\stepcounter{whichequation}\fi
      \global\@eqnswtrue\global\@eqcnt\z@\cr}
 %
-% ‚Â‚¢‚Å‚ÉEEE•›”Ô†•t‚«‚ÌC1s‚Ì•¡”‚Ì®@–k‘å‚Ìòæ¶‚ª‹ê˜J‚µ‚½‚Æ‚±‚ë
+% ã¤ã„ã§ã«ãƒ»ãƒ»ãƒ»å‰¯ç•ªå·ä»˜ãã®ï¼Œ1è¡Œã®è¤‡æ•°ã®å¼ã€€åŒ—å¤§ã®æ³‰å…ˆç”ŸãŒè‹¦åŠ´ã—ãŸã¨ã“ã‚
 \def\twoeqns{$$\refstepcounter{equation}\let\@currentlabel=\theequation
   \setcounter{whichequation}{0}\xdef\@twoequ@tions{\theequation}}
 \def\endtwoeqns{\eqno \hbox{{\rm (\@twoequ@tions)}}$$\@ignoretrue}
@@ -1982,7 +1982,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
  \xdef\@twoequ@tions{\@twoequ@tions\ifnum\c@whichequation>\@ne,$\,$\fi%
  \alph{whichequation}}%
 }
-% short equations ‚³‚ç‚É‚Â‚¢‚Å‚ÉEEE
+% short equations ã•ã‚‰ã«ã¤ã„ã§ã«ãƒ»ãƒ»ãƒ»
 \def\shorteqns{\stepcounter{equation}\let\@currentlabel=\themanyeqn
   \let\nonumber\empty % just in case
   \setcounter{whichequation}{1} \xdef\@shorteqnnum{\themanyeqn}%
@@ -2060,7 +2060,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 \def\super#1{^{\mbox{\scriptsize #1}}}
 % \def\subsc#1{_{\mbox{\footnotesize\sc \lowercase{#1}}}}
 % \def\supersc#1{^{\mbox{\footnotesize\sc \lowercase{#1}}}}
-% “ª‚É‹ó”’‚ª‚­‚é‚Ì‚ğ”÷’²®IIIIŠâŒF 2014/4/4
+% é ­ã«ç©ºç™½ãŒãã‚‹ã®ã‚’å¾®èª¿æ•´ï¼ï¼ï¼ï¼å²©ç†Š 2014/4/4
 \def\subsc#1{_{\mbox{\footnotesize\sc\kern-.5ex \lowercase{#1}}}}
 \def\supersc#1{^{\mbox{\footnotesize\sc\kern-.5ex \lowercase{#1}}}}
 \def\d{\,\mbox{d}}
@@ -2153,7 +2153,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
   \fi%
 \vskip\belowcaptionskip
 }
-% ‚±‚±‚©‚ç
+% ã“ã“ã‹ã‚‰
 \long\def\@caption#1[#2]#3{\par\addcontentsline{\csname
   ext@#1\endcsname}{#1}{\protect\numberline{\csname
   the#1\endcsname}{\ignorespaces #2}}\begingroup
@@ -2331,7 +2331,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 %
 \def\@textcite#1#2{{#1\if@tempswa ), #2\fi})}
 %
-% “ñ‚Â‚Ì`‚ğ—p‚¢‚½ˆø—p
+% äºŒã¤ã®ã€œã‚’ç”¨ã„ãŸå¼•ç”¨
 \DeclareRobustCommand\CITE{%
   \@ifnextchar [{\@tempswatrue\nobreak\kern-0ex\@CITEx}{\@tempswafalse\nobreak\kern-0ex\@CITEx[]}}
 %
@@ -2363,7 +2363,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
     \sfcode`\.=1000\relax
 }
 
-% Ó«
+% è¬è¾
 \def\ack{\@ifnextchar [{\@ack}{\@ack[1em]}}
 \def\@ack[#1]{\vskip#1\paragraph{\ackname}}
 
@@ -2376,14 +2376,14 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 \def\MARU#1{{\ooalign
   {\hfill$\scriptstyle#1$\hfill\crcr$\bigcirc$}}}
 %
-% ‰·“x degree centigrade
+% æ¸©åº¦ degree centigrade
 \def\degC{$\mbox{}^\circ$\kern-.2ex C}
 %
 % LIST environment
 %  make sep's small
 %
 % \let\Enumerate\enumerate \let\endEnumerate\endenumerate
-% ‰pŒê‚Ìê‡‚ÌƒXƒy[ƒVƒ“ƒO‚É–ß‚µ‚½‚à‚ÌEEEjsce.cls ‚Å•ÏX‚³‚ê‚Ä‚µ‚Ü‚Á‚½ JSCE
+% è‹±èªã®å ´åˆã®ã‚¹ãƒšãƒ¼ã‚·ãƒ³ã‚°ã«æˆ»ã—ãŸã‚‚ã®ãƒ»ãƒ»ãƒ»jsce.cls ã§å¤‰æ›´ã•ã‚Œã¦ã—ã¾ã£ãŸ JSCE
 \newenvironment{Enumerate}
   {\ifnum \@enumdepth >3\relax\@toodeep\else
    \advance\@enumdepth\@ne
@@ -2458,7 +2458,7 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 %
 %%%% end define
 %%%% SANBI define
-%% \begin{center}...\end{center} ã‰ºƒXƒy[ƒX‚ğ–h‚®
+%% \begin{center}...\end{center} ä¸Šä¸‹ã‚¹ãƒšãƒ¼ã‚¹ã‚’é˜²ã
 \def\Center{\topsep\z@\parsep\z@\partopsep\z@\itemsep\z@
  \trivlist \centering\item\relax}
 \def\endCenter{\endtrivlist}
@@ -2470,10 +2470,10 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 }
 \end{Center}%
 %    \vskip .5ex%
-\vskip13pt%%% sŠÔ 22pt \large = xiipt bs 17pt
+\vskip13pt%%% è¡Œé–“ 22pt \large = xiipt bs 17pt
 %   \vspace*{-7pt}
 \begin{Center} 
-% 4/25/2014 ƒNƒŒ[ƒ€‚ ‚è
+% 4/25/2014 ã‚¯ãƒ¬ãƒ¼ãƒ ã‚ã‚Š
 % {\normalsize\lineskip .5em \nonfrenchspacing\@endauthor\endgraf}%
 {\large\lineskip .5em \nonfrenchspacing\@endauthor\endgraf}%
 \end{Center}%
@@ -2485,13 +2485,13 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 % \ifEN@LISH\small\baselineskip=13.7pt%
 %            \else \small\baselineskip=10pt \fi
 % 
-% 4/25/2014 ƒNƒŒ[ƒ€‚ ‚è
+% 4/25/2014 ã‚¯ãƒ¬ãƒ¼ãƒ ã‚ã‚Š
 \normalsize
 \ifEN@LISH\baselineskip=15pt%
            \else \baselineskip=12pt \fi
-%%     \ignorespaces\hspace*{\parindent}\ignorespaces%% by Mr.Iwakuma?? ‚Ps–Ú‚ÌƒCƒ“ƒfƒ“ƒg‚ª‚³‚ª‚è‚·‚¬‚é
+%%     \ignorespaces\hspace*{\parindent}\ignorespaces%% by Mr.Iwakuma?? ï¼‘è¡Œç›®ã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆãŒã•ãŒã‚Šã™ãã‚‹
 %     \ignorespaces%\hspace*{\parindent}\ignorespaces%% by SANBI
-     \hspace*{\parindent}\ignorespaces%% by Iwakuma: need indent –ß‚µ‚½ JSCE
+     \hspace*{\parindent}\ignorespaces%% by Iwakuma: need indent æˆ»ã—ãŸ JSCE
                  {\nonfrenchspacing\@endabstract}\endgraf%
   \end{minipage}}}%
 %
