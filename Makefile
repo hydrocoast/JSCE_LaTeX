@@ -1,3 +1,8 @@
+# Makefile
+# written by Takuya Miyashita (miyashita@hydrocoast.jp)
+# Graduate student, Kyoto University
+# last modified Nov. 2018
+
 KANJI := utf8
 PLATEX := platex -kanji=$(KANJI)
 PBIB := pbibtex -kanji=$(KANJI)
