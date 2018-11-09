@@ -5,7 +5,7 @@ pLaTeX 2e 用のディレクトリのみ抽出し，編集しています．
 ## 使い方
 動作確認環境は，Ubuntu 16.04 LTS および 18.04 LTSです．  
 以下のコマンドを実行すると，PDFが作成されます．
-```
+```shell
 make ronbun # ronbun-j.pdf
 make bibtex # bibtex-j.pdf
 make soufu  # soufuhyo2e.pdf
