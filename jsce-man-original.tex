@@ -1,0 +1,500 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+% 土木学会論文集マニュアル                                           %
+% jsce.sty                                                           %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\typeout{^^J****************************************************}
+\typeout{**　土木学会論文集スタイルファイル用マニュアル　　**}
+\typeout{**　アスキー pLaTeX で二回コンパイルしてください．**}
+\typeout{**　マニュアル作成には jsce.sty を使います．　　　**}
+\typeout{****************************************************^^J}
+%
+
+\documentclass[onecolumn]{jsce}  % for LaTeX2e users 
+%
+\volumenumber{207}
+\pubyear{2161}
+\receivedate{2001年9月30日}
+\title{土木学会論文集作成マニュアル}
+\endtitle{A Manual of JSCE Style Files for \LaTeX}
+\author{土木学会論文集編集委員会\thanks{東京都新宿区四谷一丁目無番地}}
+\endauthor{JSCE Committee}
+\abstract{土木学会論文集の原稿を作成するためのマニュアル．}
+\keywords{style files, \LaTeX, Japan Society of Civil Engineers Journals}
+\unitlength=1mm
+\def\subpicture#1{\begin{picture}(50,7)(0,0)
+\put(0,0){\framebox(50,7){#1}}\end{picture}}
+% \pagestyle{plain}
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{\LaTeX のバージョン}
+
+このスタイルファイル群はすべて\LaTeX 2e用である．\LaTeX 209を
+使う場合には，それ専用のスタイルファイルを使用して欲しい．
+なお，アスキーのp\LaTeX を前提としてある．
+角藤版の配布アーカイブでは \verb+platex+ によるコンパイル用である．
+本バージョンからNTT J\TeX 用は配布していないので注意する．
+
+\section{句読点についての注意}
+\label{sec:1}
+
+横書きの組版規則に関連して
+土木学会規程では，句読点には全角の`，'と`．'を用いる．
+ただし，文部科学省は`，'と`。'を用いるように指導しているので，
+教科書等ではそうなっているのが多いので注意する．
+
+\section{学会論文集の基本的な書き方}
+
+使うスタイルファイルは{\tt jsce.sty}である．2段組なので
+次のように書き出す．
+
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+     \documentclass{jsce} % for LaTex2e users
+     % \inenglish         % 英語で書く場合にはアンコメント
+     % \finalversion      % 最後の最後はヘッダが不要らしい
+     %
+     \volumenumber{9}     % 英語論文の場合の巻番号 Vol. 
+     \journalnumber{4}    % 英語論文の場合の論文番号 No.
+                          % ここの例なら Vol.9, No.4 となる
+     \pubmonth{5}         % 発行される月
+     \pubyear{1993}       % 発行年
+     \procnumber{400}     % 和文の場合の論文集番号 No.
+     \procnumberofthefield{22}  %  和文の場合の部門毎の論文番号
+                          % ここの例なら No.400/I-22 となる
+     \firstpagenumber{5}  % 最初の頁番号
+     \firstenglishpagenumber{11} % 英文論文集の場合の最初の頁番号
+     \fieldnumber{1}      % 部門番号 （７部門には未対応）
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+こうした上で表題および最後の部分を設定し，本文につなぐ．
+
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+     \title{メインのタイトル：和文なら日本語}
+     \endtitle{別言語のタイトル：和文なら英語}
+     \author{著者１\thanks{正会員　学位　職　所属（住所）}・
+             著者２\thanks{....}}
+     \endauthor{別言語の著者リスト}
+     \abstract{概要．．．．空行可}   % 空行入れれば段落
+     \keywords{キーワード}
+     \endabstract{別言語の概要．．．空行可}
+     % \titlepagecontrol{1} % メインタイトル部分と本文との間隔調整（通常不要）
+     \receivedate{1994. 2. 15} % 受理された年月日．英文なら January 15, 1991
+     %
+     \begin{document}
+     \maketitle
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+これから下はすべて本文．\verb+\section+で始める．
+章節建ては \verb+\subsubsection+までの3階層で区別する．
+ごく標準の\LaTeX で執筆すること．
+特殊なマクロ等は可能な限り使わない．
+
+\begin{figure}[htb]
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(110,65)(0,0)
+\put(5,5){\thicklines\framebox(40,55){}}
+\put(60,5){\thicklines\framebox(40,55){}}
+\put(10,10){\dashbox{0.3}(13,45){}}
+\put(27,38){\dashbox{0.3}(13,17){}}
+\put(65,24){\dashbox{0.3}(13,31){}}
+\put(82,24){\dashbox{0.3}(13,31){}}
+\put(65,15){\dashbox{0.5}(30,7){他言語タイトル等}}
+\put(5,60){\makebox(40,5){最終頁}}
+\put(60,60){\makebox(40,5){最終頁}}
+\put(5,0){\makebox(40,5){調整前}}
+\put(60,0){\makebox(40,5){調整後}}
+\put(48,35){\vector(1,0){9}}
+\put(30,20){\vector(0,1){17}}
+\put(30,20){\vector(0,-1){10}}
+\put(66,15){\vector(0,1){7}}
+\put(66,15){\vector(0,-1){5}}
+\put(30,20){\makebox(15,5){$x$ cm}}
+\put(67,5){\makebox(25,10)[l]{$x/2$ cm}}
+\put(82,24){\makebox(13,5)[r]{\footnotesize (受理)}}
+\put(27,38){\makebox(13,5)[r]{\footnotesize (受理)}}
+\put(66,50){\makebox(13,5)[l]{\footnotesize {\tt \symbol{'134}lastpage-}}}
+\put(67,47){\makebox(13,5)[l]{\footnotesize {\tt control\{x/2\}}}}
+\put(28,50){\makebox(13,5)[l]{\footnotesize 4. 結論}}
+\put(83,36){\makebox(13,5)[l]{\footnotesize 4. 結論}}
+\end{picture}
+\caption{最終頁レイアウト調整の概略}
+\label{fig:layout}
+\end{center}
+\end{figure}
+
+論文の最後の頁には他言語によるタイトル他が配置される．
+そのためにはまず1回コンパイルし，\figno{\ref{fig:layout}}の
+左図のように右段の下空白部の高さを測定する．
+そうした上で左段の上方にくる文章のどこかに
+\begin{verbatim}
+     \lastpagecontrol{8cm}
+\end{verbatim}
+といった調整コマンドを挿入する．
+これで，この頁の下に他言語タイトル等が出力される．
+この高さをどのくらいにすると美しいかについては，trial and errorで
+調整する．
+もし本文との間にさらに空白が必要な場合には
+\begin{verbatim}
+     \lastpagecontrol[5mm]{8cm}
+\end{verbatim}
+のように追加スペースを指定する．
+この追加分は他言語タイトル等の箱と本文との間のスペースである．
+この空白部分にタイトル等が入りきらない場合には，
+次のコマンドで自動的に次頁の頭に出力される．
+
+最後の最後は受理年月日を出力するために，本文の最後の行に
+\begin{verbatim}
+     \lastpagesettings
+\end{verbatim}
+というコマンドを挿入する．
+ただし，もし上の \verb+\lastpagecontrol+で他言語タイトル等が
+入りきらない場合には，この \verb+\lastpagesettings+で
+次の頁の頭に他言語タイトル等が設定される．
+このとき，タイトル等よりも上方の空白を
+\begin{verbatim}
+     \lastpagesettings[3cm]
+\end{verbatim}
+のようにも指定できる．
+
+\section{標準以外に追加した新しいコマンド・環境等}
+
+\subsection{フロートや表}
+
+\begin{Description}
+%
+\item[　写真環境：] \verb+\begin{photo}+で始まる環境で，{\tt figure},
+ {\tt table}環境と同じフロート
+%
+\item[　図表番号の引用：] 本文中で図表番号を引用する場合には，
+例えば図なら \verb+\figno{\ref{fig:setting}}+等が使える．
+ただし漢字とのスペースの関係で，次のように使い分ける．
+\begin{Description}
+\item[　a) すぐうしろが漢字の場合：] \verb+\figno{\ref{fig:layout}}+を
+使う　例えば\figno{\ref{fig:layout}}のように．．．
+\item[　b) すぐうしろが括弧等の場合：] \verb+\figno*{\ref{fig:layout}}+を
+使う　例えば「\figno*{\ref{fig:layout}}」のように．．．
+\end{Description}
+前者の「の」と図番号との間の四分空きが，後者の
+場合には入（ってはな）らない．
+表と写真とに対してはそれぞれ \verb+\tabno+, \verb+\photono+および
+その$*$印付きが対応している．
+
+　また英文の場合で複数の引用をする場合は
+\begin{verbatim}
+   \figsno{\ref{fig:1}, \ref{fig:2}}{\ref{fig:last}}
+\end{verbatim}
+のようにする．表は \verb+\tabsno+，写真は \verb+\photosno+である．
+%
+\item[　副キャプション：] 図を2枚横に並べて副番号を振る場合には，
+標準の \verb+\caption+以外に \verb+\subcaption+が使える．
+引用も通常と同じで，\verb+\subcaption+直後の \verb+\label+に
+副記号が含まれる．キャプションの位置は図の場合は図の下，
+表の場合は表の上である．例えば
+\begin{figure}[t]
+  \begin{center}
+   \subpicture{一枚目}
+    \subcaption{最初の図}
+     \label{fig:1}
+  \end{center}
+  \begin{minipage}[t]{.47\textwidth}
+   ~
+   \begin{center}
+    \subpicture{田村正和}
+     \subcaption{次の図}
+      \label{fig:2}
+   \end{center}
+  \end{minipage}
+  ~
+  \begin{minipage}[t]{.47\textwidth}
+   ~
+   \begin{center}
+    \subpicture{三枚目}
+     \subcaption{最後の図}
+      \label{fig:3}
+   \end{center}
+  \end{minipage}
+\caption{図，あれこれ}
+\label{fig:all}
+\end{figure}
+
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+\begin{figure}[h]
+  ......
+    \subcaption{あれがこうだった場合の応答}
+     \label{fig:1}
+  ......
+    \subcaption{それがあんなだった場合の応答}
+     \label{fig:2}
+\caption{なんだかんだの応答}
+\label{fig:all}
+\end{figure}
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+のようにしてラベルを設定する．
+\figno{\ref{fig:all}}がその例である．
+もし \verb+\NoSubfloatCaptionHead+を宣言すると，
+サブキャプションには図表番号も現われなくなる．
+\tabno{\ref{tab:all}}がその例である．
+\begin{table}[t]
+\NoSubfloatCaptionHead
+\caption{番号無しの場合の表の例}
+\label{tab:all}
+    \subcaption{最初の表}
+     \label{tab:1}
+  \begin{center}
+   \subpicture{一枚目}
+  \end{center}
+  \begin{minipage}[t]{.47\textwidth}
+   ~
+     \subcaption{次の表}
+      \label{tab:2}
+   \begin{center}
+    \subpicture{二枚目}
+   \end{center}
+  \end{minipage}
+  ~
+  \begin{minipage}[t]{.47\textwidth}
+   ~
+     \subcaption{最後の表}
+      \label{tab:3}
+   \begin{center}
+    \subpicture{三枚目}
+   \end{center}
+  \end{minipage}
+\end{table}
+%
+\item[　破線：] 表の水平線に破線を使うには，
+標準の \verb+\cline+の代わりに \verb+\dline+を用いる．
+使い方は \verb+\cline+と同じ．
+破線の長さは \verb+\dlinepattern{2pt}{4pt}+のよう（デフォルト）に
+定義できる．
+\vskip 5mm
+
+\begin{minipage}[c]{.45\textwidth}
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+  \begin{tabular}{|l|l|} \hline
+   A & 1st line \\ \dline{2-2}
+   B & 2nd line \\ \dline{1-2}
+  \end{tabular}
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+\end{minipage}
+~~
+\begin{minipage}[c]{.35\textwidth}
+\begin{center}
+\begin{tabular}{|l|l|} \hline
+ A & 1st line \\ \dline{2-2}
+ B & 2nd line \\ \dline{1-2}
+\end{tabular}
+\end{center}
+\end{minipage}
+%
+\end{Description}
+
+\subsection{数式}
+
+\begin{Description}
+%
+\item[　スペーシング：] 標準の{\tt eqnarray}環境のタブ部分のスペースを
+小さくした．特に講演概要集等では必須かも．
+%
+\item[　副番号付き複数式列挙：] 標準の{\tt eqnarray}環境と
+同じ使い方で{\tt manyeqns}環境を
+使う．\verb+\begin{manyeqns}+直後の \verb+\label+が
+メインの式番号を，式のあとの \verb+\label+が副番号付きの
+式番号を設定する．
+
+\vskip 5mm
+\begin{minipage}[c]{.5\textwidth}
+\renewcommand{\baselinestretch}{.75}\small\normalsize
+\begin{verbatim}
+  \begin{manyeqns}
+  \label{eq:thiseq}
+   F & = & \int_\Gamma \sin z
+    \, \d z \label{eq:thiseq1} \\
+   G & = & \sum_{n=0}^{\infty}
+      a_n \, t^n \label{eq:2nd}
+  \end{manyeqns}
+  式(\ref{eq:2nd})が二番目で
+    式(\ref{eq:thiseq1})が最初の
+  式だが，どちらも番号
+    そのものは(\ref{eq:thiseq})である．
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.4\textwidth}
+\begin{manyeqns}
+\label{eq:thiseq}
+ F & = & \int_\Gamma \sin z \, \d z \label{eq:thiseq1} \\
+ G & = & \sum_{n=0}^{\infty} a_n \, t^n \label{eq:2nd}
+\end{manyeqns}
+式(\ref{eq:2nd})が二番目で式(\ref{eq:thiseq1})が最初の
+式だが，どちらも番号そのものは(\ref{eq:thiseq})である．
+\end{minipage}
+%
+\item[　分数：] 強制的に{\tt displaystyle}の分数にする \verb+\dfrac+を
+使うと，文中でも$\dfrac12$のよう(\verb+\dfrac12+)になる．
+また，スラッシュを用いた分数の場合は \verb+\slfrac+を
+使うと$\slfrac12$のように(\verb+\slfrac12+)なる．
+%
+\item[　ベクトル：] 結構面倒なので，\verb+\fat+で太くなるようにした．
+例えば$\fat{v}$のように(\verb+\fat{v}+)なる．
+%
+\item[　「よって」と「何故ならば」：] これは標準には含まれていない．
+そこで \verb+\therefore+と \verb+\because+が定義されている．
+それぞれ$\therefore$, $\because$となる．
+%
+\item[　行列中の大きい零：] 「楽々」にあった定義を
+そのまま入れた．\verb+\bigzerol+と \verb+\bigzerou+である．
+\vskip 5mm
+
+\begin{minipage}[c]{.35\textwidth}
+\renewcommand{\baselinestretch}{.75}\small\normalsize
+\begin{verbatim}
+  \left( \begin{array}{ccc}
+   \alpha & & \bigzerou\\
+   \cdots & \ddots & \cdots\\
+   \bigzerol & & \beta
+  \end{array} \right)
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+\end{minipage}
+\hfill
+\begin{minipage}[c]{.35\textwidth}
+\begin{eqnarray*}
+\left( \begin{array}{ccc}
+ \alpha & & \bigzerou\\
+ \cdots & \ddots & \cdots\\
+ \bigzerol & & \beta
+\end{array} \right)
+\end{eqnarray*}
+\end{minipage}
+%
+\begin{table}
+\caption{微係数表示マクロの使用例---入力間違いに注意}
+\label{tab:derivative}
+\renewcommand{\arraystretch}{1.7}
+\begin{center}
+\begin{tabular}{|l|l||l|l|}\hline
+\verb+$\D{u(x,y)}{x}$+ &
+$\displaystyle\D{u(x,y)}{x}$ &
+\verb+$\D[4]{u(x,y)}{x}$+ &
+$\displaystyle\D[4]{u(x,y)}{x}$ \\ \hline
+%
+\verb+$\D[4][3][y]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][3][y]{u(x,y)}{x}$ &
+\verb+$\D[4][2][y]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][2][y]{u(x,y)}{x}$ \\ \hline
+%
+\verb+$\D[4][1][y]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][1][y]{u(x,y)}{x}$ &
+\verb+$\D[4][4][y]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][4][y]{u(x,y)}{x}$ \\ \hline
+%
+\verb+$\D[4][0][y]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][0][y]{u(x,y)}{x}$ &
+\verb+$\D[4][2]{u(x,y)}{x}$+ &
+$\displaystyle\D[4][2]{u(x,y)}{x}$ \\ \hline
+%
+\verb+$\D*{u(x)}{x}$+ &
+$\displaystyle\D*{u(x)}{x}$ &
+\verb+$\D*[2]{u(x)}{x}$+ &
+$\displaystyle\D*[2]{u(x)}{x}$ \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+%
+\item[　添え字：] 単なる指標ではなく`cr'等意味のある添え字は
+ローマン体である．
+簡便にできるように2種類の上下添え字を定義した．
+いずれも数式モードで使用．
+\vskip 1ex
+\begin{minipage}[c]{.45\textwidth}
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+ \sigma\sub{cr}, \sigma\subsc{y},
+  \Omega\super{max}, \Omega\supersc{a}
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+\end{minipage}
+\hfill$\to$\hfill
+\begin{minipage}[c]{.35\textwidth}
+$\sigma\sub{cr}$, $\sigma\subsc{y}$,
+ $\Omega\super{max}$, $\Omega\supersc{a}$
+\end{minipage}
+\vskip 1ex
+つまり，小文字のときは \verb+\sub+, \verb+\super+を用い，
+大文字のときは \verb+\subsc+, \verb+\supersc+を使うが
+文字そのものは小文字で指定（small capsフォントを用いている）する．
+%
+\item[　積分：] 積分記号の最後に付ける$\d x$等は，実は$d x$ではない．
+つまりdが通常のローマンである．そのために \verb+\d+を定義した．
+これでアクセントの \verb+\d+は使えなくなっている．
+\vskip 1ex
+\begin{minipage}[c]{.45\textwidth}
+\renewcommand{\baselinestretch}{0.75}\small\normalsize
+\begin{verbatim}
+\int_0^\ell f(x)\d x
+\end{verbatim}
+\renewcommand{\baselinestretch}{1}\small\normalsize
+\end{minipage}
+\hfill$\to$\hfill
+\begin{minipage}[c]{.35\textwidth}
+$\displaystyle\int_0^\ell f(x)\d x$
+\end{minipage}
+\vskip 1ex
+%
+\item[　微分：] 同様に常微分のdもローマンらしい．
+文中で上記の \verb+\slfrac+を用いて微係数を表示する
+場合の$\slfrac{\slfracd f(x)}{\slfracd x}$は
+\begin{verbatim}
+     \slfrac{\slfracd f(x)}{\slfracd x}
+\end{verbatim}
+それ以外では上記の \verb+\d+を使用する．
+%
+\item[　微係数：] 結構面倒なのでマクロを
+組んだ．\tabno{\ref{tab:derivative}}参照．
+\end{Description}
+
+\subsection{文字や相互参照}
+
+\begin{Description}
+%
+\item[　丸囲み数字：] 丸で囲まれた数字で \verb+\MARU{12}+のように
+して用いると\MARU{12}と出力される．
+%
+\item[　相互参照のスペーシング調整：] 節\refno{\ref{sec:1}}に
+示したように，アスキー文字と漢字との間には四分空きが
+入らなければならないが，\verb+\ref+を用いた場合には
+それが入らない．これを改善するために新しく \verb+\refno+と
+いうコマンドを定義した．「\verb+節\refno{\ref{sec:1}}に+」の
+ように使う．
+%
+\item[　文献参照：] 土木学会規程通り，
+参照する文献番号は右上肩に片括弧付きで表示する．しかし，文中に
+どうしても書きたい場合もある．例えば「・・は文献2)を参照し」の
+ような場合である．学会論文集ではそれを容認するとは考え難いが，
+それ以外では \verb+\cite+の代りに \verb+\textcite+を使えば，
+そのような出力になる．
+\end{Description}
+
+\subsection{箇条書き環境}
+
+スペースを確保するために箇条書き
+環境の上下の空きを小さくした．もし通常の設定値で
+箇条書き環境を使いたい場合には，大文字で始まる{\tt Itemize},
+ {\tt Enumerate}, {\tt Description}環境を用いる．
+
+\lastpagesettings
+
+\end{document}

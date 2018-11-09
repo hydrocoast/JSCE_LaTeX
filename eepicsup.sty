@@ -1,0 +1,211 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% eepic-supplement to  %%% eepic Version 1.1b < Febrary 7, 1988 >  %%%
+%                      %%%                 Written by Conrad Kwok  %%%
+% Version 0.1 < 26 Feb 1993 >
+% Version 0.2 < 8 Jan 1994 >
+% Version 0.3 <26 Feb 1999 >
+%                   by IWAKUMA Tetsuo (bear@hashi1.civil.tohoku.ac.jp)
+%
+\typeout{%
+Supplement to Eepic and LaTeX. Version 0.3 <26 Feb 1999>}
+% to adjust shading pattern
+\def\shade{\@ifnextchar[{\shade@special}{\@killglue\special{sh}\ignorespaces}}
+\def\shade@special[#1]{\@killglue\special{sh #1}\ignorespaces}
+%
+% to add shaded area with/without lines or curves
+\def\shadingwithoutoutline{\gdef\@fp@special{ip}\gdef\@ar@special{ia }}
+\def\outlinedshading{\gdef\@fp@special{fp}\gdef\@ar@special{ar }}
+\outlinedshading % default
+%
+\def\@absspdrawline(#1,#2)(#3,#4){%
+    \special{pn \the\@gphlinewidth}%
+    \@tempdimc=#1\relax
+    \@tempcnta \@tempdimc\relax \advance\@tempcnta 2368 \divide\@tempcnta 4736
+    \@tempdimc=#2\relax
+    \@tempcntb -\@tempdimc\relax \advance\@tempcntb -2368 \divide\@tempcntb 4736
+    \@paspecial{\the\@tempcnta}{\the\@tempcntb}%
+    \@tempdimc=#3\relax
+    \@tempcnta\@tempdimc\relax \advance\@tempcnta 2368 \divide\@tempcnta 4736
+    \@tempdimc=#4\relax
+    \@tempcntb -\@tempdimc\relax \advance\@tempcntb -2368 \divide\@tempcntb 4736
+    \@paspecial{\the\@tempcnta}{\the\@tempcntb}%
+    \special{\@fp@special}%
+    \ignorespaces
+}
+%
+\def\@linespecial#1#2{%
+       \special{pn \the\@gphlinewidth}%
+       \special{pa 0 0}%
+       \special{pa #1 #2}%
+       \special{\@fp@special}%
+}
+%
+\def\@path(#1,#2){%
+    \@tempdima #1\unitlength
+    \@tempdimb #2\unitlength
+    \@tempcnta \@tempdima \advance\@tempcnta 2368 \divide\@tempcnta 4736
+    \@tempcntb -\@tempdimb \advance\@tempcntb -2368 \divide\@tempcntb 4736
+    \@paspecial{\the\@tempcnta}{\the\@tempcntb}%
+    \@ifnextchar ({\@path}{\special{\@fp@special}}%
+}
+%
+\def\@circlespecial#1#2#3#4{%
+       \special{pn \the\@gphlinewidth}%
+       \special{\@ar@special 0 0 #1 #2 #3 #4}
+}
+%
+\def\@qcircspecial#1#2#3#4#5{\special{\@ar@special #1 #2 #3 #3 #4 #5}}
+%
+% to utilize an extended command `da'
+\def\DashLinePattern{0.1 0.06} % default can be changed
+\def\DashLine{%
+    \@ifnextchar [{\D@shLine}{\D@shLine[\DashLinePattern]}%
+}
+\def\D@shLine[#1](#2,#3){%
+    \gdef\D@shLineP@ttern{#1}%
+    \special{pn \the\@gphlinewidth}%
+    \@DashLinepath(#2,#3)%
+}
+\def\@DashLinepath(#1,#2){%
+    \@tempdima #1\unitlength
+    \@tempdimb #2\unitlength
+    \@tempcnta \@tempdima \advance\@tempcnta 2368 \divide\@tempcnta 4736
+    \@tempcntb -\@tempdimb \advance\@tempcntb -2368 \divide\@tempcntb 4736
+    \@paspecial{\the\@tempcnta}{\the\@tempcntb}%
+    \@ifnextchar ({\@DashLinepath}{\special{da \D@shLineP@ttern}}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+%%
+%% an example
+%%
+\documentstyle[epic,eepic,eepicsup]{article}
+\textheight=20cm
+\newcommand{\bs}{{\tt\symbol{'134}}}
+\begin{document}
+\title{Supplement to eepic.sty}
+\author{an author}
+\date{8 Jan 1994}
+\maketitle\thispagestyle{empty}
+\unitlength=.25mm
+\begin{description}
+\item[{\tt {\bs}shade[n]} : ] to change shading pattern,
+where {\tt n} can be a number between 0 and 1.
+\begin{center}
+\begin{picture}(192,149)(205,-5)
+\thinlines
+\shade\put(320,63){\circle{40}}
+\shade[0.1]\path (300,115)(312,139)(352,127)(352,95)(328,95)(300,115)
+\shade[0.7]\path (376,95)(375.6,96.4)(375,97.6)(374.4,98.4)(373.8,98.8)
+(373,99)(372.2,98.8)(371.2,98.4)(370.2,97.6)(369.2,96.4)
+(368,95)(365.7,91.6)(363.5,88.3)(361.5,85)(359.7,81.7)
+(358,78.5)(356.5,75.3)(355.1,72.2)(353.9,69.1)(352.9,66)
+(352,63)(350.4,58.9)(349.1,55.2)(348.2,51.7)(347.7,48.4)
+(347.5,45.5)(347.7,42.8)(348.2,40.5)(349.1,38.4)(350.4,36.5)
+(352,35)(356.9,33.4)(361.4,32.1)(365.7,31.2)(369.8,30.7)
+(373.5,30.5)(377,30.7)(380.1,31.2)(383,32.1)(385.7,33.4)
+(388,35)(390.1,39.1)(391.8,43.2)(393.3,47.1)(394.6,50.8)
+(395.5,54.5)(396.2,58)(396.5,61.5)(396.6,64.8)(396.5,67.9)
+(396,71)(395.3,73.9)(394.2,76.8)(392.9,79.5)(391.4,82)
+(389.5,84.5)(387.4,86.8)(384.9,89.1)(382.2,91.2)(379.3,93.1)(376,95)
+\end{picture}
+\end{center}
+
+\item[{\tt {\bs}shadingwithoutoutline} : ] to remove outlines
+of the shaded areas.
+\shadingwithoutoutline
+\begin{center}
+\begin{picture}(192,149)(205,-5)
+\thinlines
+\shade\put(320,63){\circle{40}}
+\shade[0.8]\path (300,115)(312,139)(352,127)(352,95)(328,95)(300,115)
+\shade[0.2]\path (376,95)(375.6,96.4)(375,97.6)(374.4,98.4)(373.8,98.8)
+(373,99)(372.2,98.8)(371.2,98.4)(370.2,97.6)(369.2,96.4)
+(368,95)(365.7,91.6)(363.5,88.3)(361.5,85)(359.7,81.7)
+(358,78.5)(356.5,75.3)(355.1,72.2)(353.9,69.1)(352.9,66)
+(352,63)(350.4,58.9)(349.1,55.2)(348.2,51.7)(347.7,48.4)
+(347.5,45.5)(347.7,42.8)(348.2,40.5)(349.1,38.4)(350.4,36.5)
+(352,35)(356.9,33.4)(361.4,32.1)(365.7,31.2)(369.8,30.7)
+(373.5,30.5)(377,30.7)(380.1,31.2)(383,32.1)(385.7,33.4)
+(388,35)(390.1,39.1)(391.8,43.2)(393.3,47.1)(394.6,50.8)
+(395.5,54.5)(396.2,58)(396.5,61.5)(396.6,64.8)(396.5,67.9)
+(396,71)(395.3,73.9)(394.2,76.8)(392.9,79.5)(391.4,82)
+(389.5,84.5)(387.4,86.8)(384.9,89.1)(382.2,91.2)(379.3,93.1)(376,95)
+\outlinedshading
+\whiten\put(326,57){\circle{40}}
+\end{picture}
+\end{center}
+
+\item[{\tt {\bs}outlinedshading} : ] for outlined shadings.
+\outlinedshading
+\begin{center}
+\begin{picture}(192,149)(205,-5)
+\thinlines
+\shade\put(320,63){\circle{40}}
+\shade[0.6]\path (300,115)(312,139)(352,127)(352,95)(328,95)(300,115)
+\shade[0.5]\path (376,95)(375.6,96.4)(375,97.6)(374.4,98.4)(373.8,98.8)
+(373,99)(372.2,98.8)(371.2,98.4)(370.2,97.6)(369.2,96.4)
+(368,95)(365.7,91.6)(363.5,88.3)(361.5,85)(359.7,81.7)
+(358,78.5)(356.5,75.3)(355.1,72.2)(353.9,69.1)(352.9,66)
+(352,63)(350.4,58.9)(349.1,55.2)(348.2,51.7)(347.7,48.4)
+(347.5,45.5)(347.7,42.8)(348.2,40.5)(349.1,38.4)(350.4,36.5)
+(352,35)(356.9,33.4)(361.4,32.1)(365.7,31.2)(369.8,30.7)
+(373.5,30.5)(377,30.7)(380.1,31.2)(383,32.1)(385.7,33.4)
+(388,35)(390.1,39.1)(391.8,43.2)(393.3,47.1)(394.6,50.8)
+(395.5,54.5)(396.2,58)(396.5,61.5)(396.6,64.8)(396.5,67.9)
+(396,71)(395.3,73.9)(394.2,76.8)(392.9,79.5)(391.4,82)
+(389.5,84.5)(387.4,86.8)(384.9,89.1)(382.2,91.2)(379.3,93.1)(376,95)
+\end{picture}
+\end{center}
+
+\item[{\tt {\bs}DashLine} : ] for dash-lines to utilize
+the extended (not portable) TPIC command `{\tt da}'
+in {\tt dviout/prt} on {\tt MS-DOS}.
+The default dash-pattern is defined in \verb+\DashLinePattern+ as
+\begin{verbatim}
+\def\DashLinePattern{0.1 0.06}
+\end{verbatim}
+where the first number indicates the length of dash in inch, while
+the second one is the gap next.
+One may redefine it by \verb+\renewcommand+ so that one can
+draw a dashed-and-dotted line; e.g.
+\begin{verbatim}
+\renewcommand{\DashLinePattern}{0.1 0.03 0.03 0.03}
+\end{verbatim}
+Or one can set this pattern as an option for \verb+\DashLine+ as
+\begin{verbatim}
+\DashLine[0.1 0.03 0.03 0.03](23,45)(23.5,45.3)........
+\end{verbatim}
+\begin{center}
+\unitlength=.25mm
+\begin{picture}(200,66)(200,-5)
+\thinlines
+% object # 0  (line)
+\dashline[60]{10}(200,32)(280,32)
+% object # 1  (line)
+\DashLine(320,32)(400,32)
+% object # 2  (line)
+\thicklines
+\DashLine[0.1 0.03 0.03 0.03](400,16)(320,16)
+\thinlines
+% object # 3  (line)
+\thicklines
+\dashline[60]{10}[2](280,16)(200,16)
+\thinlines
+% object # 4  (line)
+\Thicklines
+\dottedline{3}(200,0)(280,0)
+\thinlines
+% object # 5  (line)
+\Thicklines
+\DashLine[0.1 0.03 0.03 0.03 0.03 0.03](320,0)(400,0)
+\thinlines
+% object # 6  (string)
+\put(324,44){{\xpt\rm DashLine}}
+% object # 7  (string)
+\put(198,44){{\xpt\rm dash[dotted]line}}
+%
+\end{picture}
+\end{center}
+\end{description}
+\end{document}

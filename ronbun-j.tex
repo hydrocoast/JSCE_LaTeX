@@ -1,0 +1,317 @@
+%%#!platex
+%
+% Example of Japanese Paper of JSCE
+% for LaTeX2e users
+%
+% revised on 4/25/2014
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% もし jis フォントメトリックを使う場合は，以下をアンコメントしてください．
+% \DeclareFontShape{JY1}{mc}{m}{n}{<-> s * jis}{}
+% \DeclareFontShape{JY1}{gt}{m}{n}{<-> s * jisg}{}
+%
+\documentclass{jsce}
+%
+\usepackage{epic,eepic,eepicsup}
+\usepackage{graphicx}
+%  amsを使う方は以下をアンコメントしてください．
+%\usepackage{amssymb,amsmath}
+% 英語はサポートしているかどうか不明
+% \inenglish
+% 学会サンプルに times とあるので指定しておきます
+\usepackage{times}
+% あるいは，その代替フォントとして TX フォントを・・・
+% \usepackage{txfonts}
+%  あるいは，v, w に丸みを帯びたものの方がお好きな場合は
+% \usepackage[varg]{txfonts}
+%
+\finalversion % ヘッダが不要らしい
+%
+%  \volumenumber{9} % H_AND_F
+%  \journalnumber{4}
+%  \pubmonth{5}
+%  \pubyear{1993}
+%  \procnumber{400}
+%  \procnumberofthefield{22}
+%  \firstpagenumber{1}
+%  \firstenglishpagenumber{11}
+%  \fieldnumber{3}
+%
+\title{土木学会論文集の完全版下投稿用和文原稿\LaTeX 作成例}
+%
+\endtitle{PRINT SAMPLE FOR JAPANESE MANUSCRIPT FOR JOURNALS OF
+ JSCE USING \LaTeX}
+%
+% emailアドレスのフォントをタイプライター体にしたい方は次行をアンコメント
+% \emailstyle{\ttfamily}
+% emailアドレスを公開される方は，
+%% \thanks{○○○○○○\email{your_name@foo.ac.jp}}のようにしてください．
+%
+\author{論文集　編集委員会\thanks{正会員 工博 土木大学教授 工学部
+土木工学科（〒160-0001東京都新宿区四谷一丁目
+無番地）\email{your_name@foo.ac.jp}}・
+事務　局\thanks{正会員 工修 土木建設株式会社 技術開発部（〒160-0002東京
+都新宿区三矢六丁目13-5）}・
+Civil ENGINEER\thanks{Member of JSCE, PhD., JSCE Corp.}}
+%
+\endauthor{Editorial COMMITTEE, Japan SOCIETY and Civil ENGINEERING}
+%
+\abstract{このファイルは
+土木学会論文集の完全版下原稿（和文）を作成するために必要
+な，レイアウトやフォントに関する基本的な情報を記述しています．と同時に，
+版下原稿そのものの体裁(A4)をとっているため，このファイルの中の文章や図
+表をこれから書こうとしている実際のものに置き換えれば，所定のフォントや配
+置の原稿を容易に作成することができます．
+
+このアブストラクトを含め，タイトル部分の幅は本文よりも左右を1\,cmずつ
+狭くします．アブストラクトのフォントは明朝体9\,pt（英文10\,pt）を
+用いてください．アブ
+ストラクトの長さは7行以内です．アブストラクトの後に1行空けて，キーワー
+ドを数語，Computer Modern Italic 9\,pt（英文10\,pt）のフォントで
+書いて下さい．}
+%
+\keywords{Computer Modern, italic, 10\,pt, several words,
+ one blank line below ABSTRACT, indent if key words exceed one line}
+%
+\endabstract{% Yes blank line
+The present file has been made as a print sample of the camera-ready
+manuscripts for Journal of JSCE. Its text describes instructions to
+prepare the manuscripts: the layout; the font styles and sizes; and
+others. If you replace the text or the figures of the present file by
+your own ones, using CUT \& PASTE procedures, you can easily make your
+own manuscripts.
+
+This English ABSTRACT has narrower width than the main text by 1\,cm
+from the left and the right margins of the main text, respectively. Font
+size used here is 10\,pt.
+The length may be within 7 lines. It is
+preceded by the title and the authors; both are centered.
+The title and authors use 12\,pt font.}
+%
+% \titlepagecontrol{1}
+%
+\receivedate{2012. 11. 18}
+% \receivedate{January 15, 1991}
+%
+% \def\theenumi{\alph{enumi}}  % もし enumerate 最初の箇条を (a) と
+% \def\labelenumi{(\theenumi)} % したい場合・・・
+%
+\begin{document}
+
+\maketitle
+
+\section{タイトルページ}
+
+\subsection{タイトル部分のレイアウトとフォント}
+
+タイトルページは二つの部分で構成されます．
+\begin{enumerate}
+\item タイトル部分（題目，著者，所属，概要，
+キーワード）：横一段組
+\item 本文部分：横二段組
+\end{enumerate}
+このほか，ヘッダとフッタ（ページ番号）が付きます．
+
+タイトル部分の左右のマージンは，本文の左右のマージンよりも
+それぞれ1\,cmずつ大きくとって下さい．すなわちA4用紙の
+幅に対して左右それぞれ3\,cmずつのマージンをとります．
+
+タイトルはA4用紙の上辺に約3\,cmのマージンを取り，センタリングします．
+以下次の順にタイトル部分の構成要素を書いて下さい．
+\begin{description}
+\item[] タイトル：ゴシック体20\,ptフォント（英文なら17\,pt）\par
+        （約1.5\,cmのスペース）
+\item[] 著者名：明朝体12\,ptフォント\par
+        （約5\,mmのスペース）
+\item[] 著者所属：明朝体8\,ptフォント（英文9\,pt）\par
+        （約1\,cmのスペース）
+\item[] アブストラクト：明朝体9\,ptフォント（英文10\,pt），7行以内\par
+        （1行のスペース）
+\item[] キーワード：Computer Modern, italic, 9\,pt, \par
+        英文10\,pt, 数語，2行以内
+\end{description}
+
+著者と所属とは肩付き数字で対応づけ，上記のように並べて
+下さい．`{\fontkeywords Key Words}'という文字は
+ボールドイタリック体にします．
+
+\subsection{本文部分のレイアウトとフォント}
+
+本文とキーワードの間に約1\,cmのスペースを空けてください．
+
+本文は二段組で，左右のマージンは2\,cmずつ，段と段との間のスペースは
+約6\,mmとします．下辺のマージンは24\,mmです．
+
+本文には明朝体10\,pt（英文11\,pt）フォントを用いて下さい．
+各部分のフォントはクラスファイル`{\tt jsce.cls}'を用いた
+場合には自動化されていますから，著者が指定する必要はありません．
+
+\subsection{ヘッダとフッタ}
+
+タイトルページにはヘッダ機能を使って論文集の号巻数を入れます．また，
+すべてのページの下辺中央にフッタ機能を使ってページを入れます．
+事務局から通知された数値を最終原稿作成時に入れてください．\LaTeX の
+場合には最初の頁番号のみが必要です．二回のコンパイル後，自動的に
+最終頁番号は表示されます．
+
+\section{一般ページ}
+
+\subsection{脚注および注}
+
+第2ページ以降の通常のページは上辺のマージンを19\,mmとします．それ以
+外はタイトルページの本文部分と同じレイアウトとフォントで本文を作成します．
+
+脚注や注はできるだけ避けて下さい．本文中で説明するか，もしくは本文の流
+れと関係ない場合には付録として本文末尾に置いて下さい．
+
+\subsection{各種マクロ}
+
+マニュアルを読んでください．便利なものを定義してあります．
+
+\section{見出し（見出しが1行以上に長くなるときは
+この例のようにインデントして折り返す）}
+
+\subsection{見出しのレベル}
+
+見出しのレベルは3段階までとします．第1レベルの見出し（節）はゴシック
+体とし，{\bf 2.}などの数字に続けて書きます．
+また，見出しの上下にスペースを空
+けます．このファイルのサンプルから分かるように，上を1行以上，
+下を1行程度空けて下さい．
+
+\subsection{第2レベルの見出し}
+
+第2レベルの見出し（小節）もゴシック体で，{\bf (4)}などの
+括弧付き数字を付けます．見出しの上だけに1行程度の
+スペースを空けて下さい．
+
+\subsection{さらに深い節}
+
+\subsubsection{第3レベルの見出し}
+
+第3レベルの見出し（項）は，括弧付きアルファベットを付け，上下には特に
+スペースを空けません．第3レベルより下位の見出しは用いないで下さい．
+
+\section{数式および数学記号}
+
+数式や数学記号は次の式(\ref{eq:1a})
+\begin{manyeqns}
+G&=&\sum_{n=0}^\infty b_n(t) \label{eq:1a} \\
+F&=& \int_\Gamma \sin\,z \d z \label{eq:1b}
+\end{manyeqns}
+のように本文と独立している場合でも，$C_D$, $\alpha(z)$の
+ように文章の中に出てくる場合でも
+同じ数式用のフォントを用いて作成します．
+数式や数学記号の品質が悪いと版下
+原稿として受け付けません．
+\begin{twoeqns}
+\EQab
+f(x)\equiv \sum_{n=1}^\infty a_n\,g_n(x), \quad
+\EQab
+a_n=\cdots \label{eq:twoeqns-b}
+\end{twoeqns}
+数式はセンタリングし，式番号は括弧書きで右詰めにします．
+引用は式(\ref{eq:twoeqns-b})のようにします．
+
+\begin{table}
+\caption{表のキャプションは表の上に置く．このように長い
+ときはインデントして折り返す．}\label{tab:1}
+\begin{center}
+\begin{tabular}{ccc} \hline
+ 供試体番号 & 高さ(cm) & 幅(cm) \\ \hline
+ 1 & 145.5 & 25.0 \\
+ 2 & 175.5 & 40.0 \\
+ 3 & 190.0 & 65.0 \\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{figure}
+\begin{center}
+\input{jsce-fig.tex}
+\end{center}
+\vspace*{-4mm}
+\caption{図のキャプションは図の下に置く}\label{fig:1}
+\end{figure}
+
+\section{図表}
+
+\subsection{図表の位置}
+
+図表はそれらを最初に引用する文章と同じ（あるいは
+見開きで見える範囲の）ページに置くことを原則とします．
+原稿末尾にまとめたりしてはいけません．
+また，図表はそれぞれのページの上部
+に集めてレイアウトして下さい．図表の横幅は，「二段ぶち抜き」
+あるいはこのサンプルの\tabno{\ref{tab:1}}や\figno{\ref{fig:1}}の
+ように「一段の幅いっぱい」のいずれかとします．
+図表の幅を一段幅以下にして図表の横に本文テキストを
+配置することはやめて下さい．
+図表と文章本体との間には1行程度の空白を空けて区別を明確にします．
+
+\subsection{図表中の文字およびキャプション}
+
+図表中の文字や数式の大きさが小さくなり過ぎないように注意してください．
+特にキャプションの大きさ（9\,pt（英文10\,pt））より
+小さくならないようにして下さい．
+
+長いキャプションは\tabno{\ref{tab:1}}のように
+インデントして折り返します．英文キャプ
+ションの場合は，見出しを{\bf Table 1}や{\bf Fig. 2}として下さい．
+クラスファイルを利用していれば \verb+\figno+等で自動的にそうなります．
+
+\section{参考文献の引用とリスト}
+
+参考文献は出現順に番号を振り，その引用箇所で
+このように\cite{1,2}上付き
+右括弧付き数字で指示します．
+参考文献はその全てを原稿の末尾にまとめてリス
+トとして示し，脚注にはしないでください．
+
+なお参考文献リストのあとに1行空けて，事務局から通知された原稿受理日を
+右詰めで書いて下さい．
+
+\lastpagecontrol[1cm]{13cm}
+
+\section{最終ページのレイアウトと英文要旨}
+
+最終ページには英文のタイトル，著者名および要旨を横一段組で書きます．こ
+のサンプルにあるように，本文や参考文献リストまでの二段組部分の左右の柱の
+高さをほぼ同じにし，1\,cm程度の空白を
+入れて英文要旨を配置します．英文要旨部
+分の幅はタイトル部分と同じく本文よりも左右を1\,cmずつ狭くします．
+
+\ack 「謝辞」は「結論」の後に置いて下さい．
+見出しとコロンをゴシック体で
+書き，その直後から文章を書き出して下さい．
+
+\appendix
+
+\section{「付録」の位置}
+
+「付録」がある場合は「謝辞」と「参考文献」の間に置くこと．
+
+\begin{thebibliography}{20}
+\bibitem{1} Hill, R.: A self-consistent mechanics of composite materials,
+ \newblock {\em J. Mech. Phys. Solids,} Vol.13, pp.213-222, 1965.
+\bibitem{2} Blevins, R.D.:
+ \newblock {\em Flow-Induced Vibration,} 2nd ed.
+ Van Nostrand Reinhold, New York, 1990.
+\bibitem{3} Karniadakis, G.E., Orszag, S.A. and Yakhot, V.:
+ Renormalization group theory simulation of
+ transitional and turbulent flow over a backward-facing step,
+ \newblock {\em Large Eddy Simulation of Complex Engineering and
+ Geophysical Flows,} Galperin, B. and Orszag, S.A. eds.
+ Cambridge University Press, Cambridge, pp.159-177, 1993.
+\bibitem{4} ファン, Y.C.:
+ \newblock 固体の力学／理論,
+ \newblock 大橋義夫, 村上澄男共訳, 培風館, 1970.
+\bibitem{5} 土田建次，木村 一:
+ \newblock 版下原稿スタイルフォーマットの作成について,
+ \newblock 土木学会論文集, No.333/II-99, pp.20-33, 1994.
+\end{thebibliography}
+
+\lastpagesettings
+
+\end{document}

@@ -1,0 +1,479 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 土木学会論文集 --- 送付票 (soufu-hyo) 作成のためのスタイルファイル
+%
+%   サンプルは \endinput のうしろにある
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\gtfam\undefined\else
+ \renewcommand{\baselinestretch}{1.1037}
+ \renewcommand{\arraystretch}{1.1037}
+\fi
+%
+\typeout{soufuhyo.sty ver. Feb 16 2002 stardate [-30]8020.88 ^^J
+ \space\space\space\space\space (C) bear@civil.tohoku.ac.jp ^^J
+ アスキーのpLaTeX (platex/qlatex209) でコンパイルしてください．}
+\typeout{March 31 2005
+Partly, adjusted by SANBI Co., Ltd. (C)
+}
+%
+
+\hoffset=-5mm
+\setlength{\topmargin}{-10mm}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{27cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{-1.5mm}
+\setlength{\evensidemargin}{-1.5mm}
+\pagestyle{empty}
+%
+\def\MARU#1{{\ooalign{\hfill{\small\bf#1}\hfill\crcr{\Large$\bigcirc$}}}}
+\def\Maru#1{\ovalbox{#1}}
+\def\TT{\rule{0pt}{2.6ex}}
+\def\TB{\rule[-2ex]{0pt}{0pt}}
+\newcounter{reprint}
+\setcounter{reprint}{50}
+%
+% データ作成マクロ
+%
+\title{}
+\def\etitle#1{\gdef\@etitle{#1}} \etitle{}
+%
+\def\author{\@ifnextchar [{\@aauthor}{\@aauthor[0]}}
+
+\def\@aauthor[#1]#2#3#4#5{\gdef\@author{%
+\raisebox{-10pt}[0pt][0pt]{#2}%
+& 
+\raisebox{-10pt}[0pt][0pt]{#3} 
+&
+ \small #4 
+& 
+\@membership{#1} \\ \cline{3-4}%
+&
+& 
+\multicolumn{2}{l|}{{\bf 第 1 著者の個人会員番号（No.}~#5{\bf）}}
+}
+}
+
+
+%
+
+
+
+\def\pushtowall{\relax\leavevmode
+\ifmmode\def\next{\mathpalette\mathpushw@ll}
+\else\let\next\makepushw@ll \fi \next}
+\def\finpushw@ll{\wd0=0pt \box0}
+\def\makepushw@ll#1{\setbox0=\hbox{#1}\finpushw@ll}
+\def\mathpushw@ll#1#2{\setbox0=\hbox{$\m@th#1{#2}$}\finpushw@ll}
+
+
+
+
+
+
+
+
+
+\def\@membership#1{%
+ \bf \ifdim#1pt>3pt {\scriptsize\bf フェロー} 正 学 非 \else
+  \ifdim#1pt>2pt {\scriptsize\bf フェロー} 正 学 \MARU{非} \else
+   \ifdim#1pt>1pt {\scriptsize\bf フェロー} 正 \MARU{学} 非 \else
+    \ifdim#1pt>0pt \MARU{{\scriptsize\bf フェロー}} 正 学 非 \else
+     {\scriptsize\bf フェロー} \MARU{正} 学 非 \fi\fi\fi\fi}
+
+\def\authorA{\@ifnextchar [{\@aauthorA}{\@aauthorA[0]}}
+
+
+\def\@aauthorA[#1]#2#3#4{\gdef\@authorA{#2 & #3 
+& \small #4 &
+ \@membership{#1}}}
+
+
+\def\authorB{\@ifnextchar [{\@aauthorB}{\@aauthorB[0]}}
+\def\@aauthorB[#1]#2#3#4{\gdef\@authorB{#2 & #3 
+& \small #4 &
+ \@membership{#1}}}
+
+
+\def\authorC{\@ifnextchar [{\@aauthorC}{\@aauthorC[0]}}
+\def\@aauthorC[#1]#2#3#4{\gdef\@authorC{#2 & #3 &  \small #4 &
+ \@membership{#1}}}
+
+
+
+\def\authorD{\@ifnextchar [{\@aauthorD}{\@aauthorD[0]}}
+\def\@aauthorD[#1]#2#3#4{\gdef\@authorD{#2 & #3 & \small #4 &
+ \@membership{#1}}}
+
+\def\authorE{\@ifnextchar [{\@aauthorE}{\@aauthorE[0]}}
+\def\@aauthorE[#1]#2#3#4{\gdef\@authorE{#2 & #3  & \small #4 &
+ \@membership{#1}}}
+
+
+\author[4]{}{}{}{}  \authorA[4]{}{}{} \authorB[4]{}{}{}
+\authorC[4]{}{}{} \authorD[4]{}{}{} \authorE[4]{}{}{}
+%
+\def\RONBUN{論文} \def\HOUKOKU{報告} \def\NOTE{ノート}
+\def\TOUGI{討議}  \def\TENBOU{委員会報告}
+\def\kubun#1{\ifdim#1pt=1pt \gdef\RONBUN{\Maru{論文}} \else
+ \ifdim#1pt=2pt \gdef\HOUKOKU{\Maru{報告}} \else
+ \ifdim#1pt=3pt \gdef\NOTE{\Maru{ノート}} \else
+ \ifdim#1pt=4pt \gdef\TOUGI{\Maru{討議}} \else
+  \ifdim#1pt=5pt \gdef\TENBOU{\Maru{委員会報告}} \fi\fi\fi\fi\fi}
+\kubun{0}
+\newdimen\@bumon
+\def\bumon#1{\global\@bumon=#1pt}
+\def\fukubumon#1{\gdef\@fukubumon{#1}\gdef\fukubumonyn{なし\,\<・\<\,\Maru{あり}}}
+\fukubumon{~}
+\def\fukubumonyn{\Maru{なし}\<・\<あり}
+%
+\def\ikisatua[#1]#2{\ifdim#1pt>0pt
+ \gdef\@reviewa{\Maru{有}・無}\else\gdef\@reviewa{有・\Maru{無}}\fi
+ \gdef\@ikisatua{#2}} \ikisatua[0]{}
+ \def\@reviewa{有・無}
+\def\ikisatub[#1]#2{\ifdim#1pt>0pt
+ \gdef\@reviewb{\Maru{有}・無}\else\gdef\@reviewb{有・\Maru{無}}\fi
+ \gdef\@ikisatub{#2}} \ikisatub[0]{}
+ \def\@reviewb{有・無}
+\def\ikisatuc[#1]#2{\ifdim#1pt>0pt
+ \gdef\@reviewc{\Maru{有}・無}\else\gdef\@reviewc{有・\Maru{無}}\fi
+ \gdef\@ikisatuc{#2}} \ikisatuc[0]{}
+ \def\@reviewc{有・無}
+\def\ikisatud[#1]#2{\ifdim#1pt>0pt
+ \gdef\@reviewd{\Maru{有}・無}\else\gdef\@reviewd{有・\Maru{無}}\fi
+ \gdef\@ikisatud{#2}} \ikisatud[0]{}
+ \def\@reviewd{有・無}
+\def\ikisatue[#1]#2{\ifdim#1pt>0pt
+ \gdef\@reviewd{\Maru{有}・無}\else\gdef\@reviewe{有・\Maru{無}}\fi
+ \gdef\@ikisatue{#2}} \ikisatue[0]{}
+ \def\@reviewe{有・無}
+%
+\def\returntitle#1{\gdef\@returntitle{#1}} \returntitle{}
+\def\returnbumon#1{\gdef\@returnbumon{#1}} \returnbumon{~~}
+\def\hRONBUN{論文} \def\hHOUKOKU{報告} \def\hNOTE{ノート}
+\def\returnkubun#1{\ifdim#1pt=1pt \gdef\hRONBUN{\Maru{論文}} \else
+ \ifdim#1pt=2pt \gdef\hHOUKOKU{\Maru{報告}} \else
+ \ifdim#1pt=3pt \gdef\hNOTE{\Maru{ノート}} \fi\fi\fi}
+\returnkubun{0}
+\def\returndate#1#2{\gdef\@returndate{{\rm #1}~ 年 ~{\rm #2}~ 月頃}}
+\returndate{~~~}{~~}
+\def\returnno#1#2{\gdef\@returnno{{\rm #1}--{\rm #2}}}
+\returnno{~}{~~~}
+%
+\def\totalpage#1{\gdef\@totalpage{#1}} \totalpage{}
+\def\colorpage#1{\gdef\@colorpage{#1}} \colorpage{}
+
+\def\reprint#1{\gdef\@reprint{#1}} \reprint{0}
+\long\def\address#1{\gdef\@address{#1}} \address{}
+\def\telephone{\@ifnextchar [{\@tel}{\@tel[]}}
+\def\@tel[#1]#2{\gdef\@telephone{#2}\gdef\@extension{#1}}
+ \telephone[~]{\hspace{2cm}}
+\def\fax#1{\gdef\@fax{#1}} \fax{}
+\def\member#1{\gdef\@memberID{#1}} \member{~~~}
+\def\email#1{\gdef\@email{#1}} \email{}
+\def\@home{自宅}
+\def\@office{勤務先}
+\def\home{\gdef\@home{\Maru{自宅}}}
+\def\office{\gdef\@office{\Maru{勤務先}}}
+%
+% ここからがレイアウトのメイン部分
+%
+\def\doit{%
+\begin{center}%
+{\Large\bf 土木学会論文集　論文送付票}%
+\end{center}%
+
+{\bf
+
+\noindent 事務局記入欄
+
+\noindent%
+\begin{tabular*}{173mm}[c]{|c|c|c|c|@{\extracolsep{\fill}}c|} \hline
+ 査読部門 & 論文番号 & 受付年月日 & 1. 和文 & 論　文・報　告・ノート\\
+ ~1~2~3~4~5~6~7~ & No. \hspace{15mm} & \hspace*{10mm} 年
+ \hspace*{8mm} 月 \hspace*{8mm} 日 & 2. 英文 & 討　議・委員会報告 \\ \hline
+\end{tabular*}%
+
+{%
+\vskip 1mm
+
+\centering ここから下を記入してください
+
+}%
+}
+
+\vskip 1mm
+
+\noindent%
+\begin{tabular*}{173mm}[c]%
+ {|p{16mm}@{\hspace{5mm}}p{145mm}@{\extracolsep{\fill}}l|} \hline
+  {\bf 論文題目\par (日本語)} &
+ {\renewcommand{\baselinestretch}{.7}\TT\@title} & \\ \hline
+  {\bf \mbox{}~(英語)\par ~~~} &
+ {\renewcommand{\baselinestretch}{.7}\TT\@etitle} & \\ \hline
+\end{tabular*}%
+
+\vskip 4mm
+
+\normalsize
+
+\noindent%
+\begin{tabular*}{173mm}[c]%
+% {|l|l|c|l@{\extracolsep{\fill}}c|@{\extracolsep{\tabcolsep}}c|} \hline
+%{|l|l|l%@{\extracolsep{\fill}}c
+%|@{\extracolsep{\tabcolsep}}c|} \hline
+{|l|l|c@{\extracolsep{\fill}}|c|}\hline
+  \multicolumn{1}{|c|}{\makebox[7zw]{\bf 著者氏名}} 
+&
+   \multicolumn{1}{c|}{{\bf 氏名のローマ字綴り}} 
+&
+    \multicolumn{1}{c|}{\makebox[65mm]{\bf 勤務先・職名}} 
+& 
+{\bf 会員区分} \\ \hline
+ \@author  \\ \hline
+ \@authorA \\ \hline
+ \@authorB \\ \hline
+ \@authorC \\ \hline
+ \@authorD \\ \hline
+ \@authorE \\ \hline
+\end{tabular*}%
+
+
+{\bf
+
+\vskip 4mm
+
+\newdimen\@asciinttsize
+\ifx\gtfam\undefined
+ \@asciinttsize=-20pt
+\else
+ \@asciinttsize=-13pt
+\fi
+
+\noindent%
+\tabcolsep=1mm
+%\begin{tabular*}{173mm}[c]{|c|c|c|l||l|@{\extracolsep{\fill}}l|}%
+\begin{tabular*}{173mm}[c]{|c|c|c|l||@{\extracolsep{\fill}}l|}%
+ \hline
+ \rule[-3.5mm]{0mm}{9.5mm}{\scriptsize 投稿区分} &
+ {%
+  \small \RONBUN\<・\<\HOUKOKU\<・\<\NOTE\<・\<\TOUGI\<・\<\TENBOU} &
+% \raisebox{-.5\@asciinttsize}[0pt][0pt]
+{\footnotesize 投稿部門} &
+% \raisebox{-.5\@asciinttsize}[0pt][0pt]
+{%
+  \ifdim\@bumon=1pt \MARU{1}\else 1\ \fi
+  \ifdim\@bumon=2pt \MARU{2}\else 2\ \fi
+  \ifdim\@bumon=3pt \MARU{3}\else 3\ \fi
+  \ifdim\@bumon=4pt \MARU{4}\else 4\ \fi
+ \ifdim\@bumon=5pt \MARU{5}\else 5\ \fi
+  \ifdim\@bumon=6pt \MARU{6}\else 6\ \fi
+  \ifdim\@bumon=7pt \MARU{7}\else 7\ \fi 部門} &
+% \raisebox{-.5\@asciinttsize}[0pt][0pt]
+{%
+   副部門\<：\<\fukubumonyn (\makebox[1zw]{\rm \@fukubumon})部門} %&
+% \shortstack[l]{%
+%   \hbox to 3zw{ページ数\hss} \hfill~ \\ ~\hfill {\rm \@totalpage}~頁}
+\\ \hline
+\rule[-3.5mm]{0mm}{9mm}\small 頁数&\multicolumn{4}{l|}{\begin{tabular}{ll}
+\hfill\raisebox{0mm}{\hbox to2zw{\hfill\rm \@totalpage}頁\<（うちカラー
+\underline{\hbox to2zw{\hfill\rm\@colorpage}}頁）
+\<}\,\smash{\rule[-3.25mm]{.4pt}{9.25mm}}&\smash{%
+\raisebox{-1.5mm}{%
+\shortstack[l]{\small
+※登載決定した際にカラー印刷する頁数をご記入ください．投稿受\\[-.5mm]
+\small 付後の変更
+はできません．費用は著者負担8万円／1頁となります．
+}}}
+\\
+\end{tabular}%
+}
+\\ \hline
+\end{tabular*}%
+%
+}
+
+\vskip 4mm
+
+\noindent%
+\begin{tabular*}{173mm}[c]{|p{143mm}||c@{\extracolsep{\fill}}c|} \hline
+{\small\bf%
+ \underline{過去の発表の経緯 (土木学会発行の他誌，他学協会誌など)}}\TB
+ & {\bf 査読の有無} & \\ \hline
+ \@ikisatua & \@reviewa & \\ \hline
+ \@ikisatub & \@reviewb & \\ \hline
+ \@ikisatuc & \@reviewc & \\ \hline
+ \@ikisatud & \@reviewd & \\ \hline
+ \@ikisatue & \@reviewe & \\ \hline
+ \multicolumn{2}{|p{163mm}}{%
+\pushtowall{\scriptsize\bf%
+過去に土木学会論文集に投稿し，
+返却または著者取下げした論文等を修正して
+再投稿する場合には，前回の論文題目を書いて下さい．
+}} & \\
+%
+ \multicolumn{2}{|p{163mm}}{%
+ {\bf 部門 ({\rm \@returnbumon})~~論文題目：} {\small \@returntitle}} & \\
+ \multicolumn{2}{|p{163mm}}{%
+ {\bf 前回の投稿区分} ({\hRONBUN}・{\hHOUKOKU}・{\hNOTE}) \hfill
+ {\bf 前回投稿時期}~\@returndate {\bf 　論文番号}(\@returnno)} & \\ \hline
+\end{tabular*}%
+
+\vskip 0.5mm
+
+\noindent {\small\bf ※他誌への同時投稿は認められません．}%
+
+\vskip 2.5mm
+
+\noindent%
+\begin{tabular*}{173mm}[c]{|l|p{70mm}|c|l@{\extracolsep{\fill}}c|} \hline
+ \multicolumn{5}{|l|}{{\bf 以上の記述事項の内容に相違ありません}} \\\hline
+% \multicolumn{5}{|l|}{{\bf また，登載決定した場合には，本論文の著作権を土木学会へ帰属（譲渡）することに同意します．}} \\ \hline
+  & & {\bf 署名} & \hspace{50mm} {\footnotesize\bf 印} & \\ \cline{3-5}
+  & & {\bf TEL} & {\rm \@telephone}%
+              \ifx\@extension\empty\else 内線 {\rm \@extension}\fi & \\
+    \cline{3-5}%
+  \raisebox{0pt}[0pt]{{\bf \shortstack[l]{代表者 \\ 連絡先住所 \\ 勤務先 \\ 所属}}}
+  & \raisebox{0pt}[0pt]{\parbox[b]{68mm}{\normalsize \@address}} &
+   {\bf FAX} & {\rm \@fax} & \\ \hline
+  {\tt Email} & \multicolumn{3}{|l}{{\footnotesize\tt \@email}} & \\ \hline
+\end{tabular*}%
+\vskip 0.5mm
+
+\small\bf
+\noindent
+※会員区分，投稿区分，投稿部門，副部門の有無については，いずれかに○を付けて
+下さい．\\%[-2mm]
+※本票はA4版とし，論文の先頭にホチキス留めして下さい．\\
+※登載決定後，印刷用原稿提出時に著作権譲渡書を別途ご提出いただきますの
+で早めに準備しておいてください
+}
+
+\endinput
+%%%%%%%%%%%%%%%%%%%%%% end of soufuhyo.sty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 土木学会論文集送付票作成　サンプルソース
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\gtfam\undefined
+ \documentstyle[11pt,fancybox,soufuhyo]{j-article}
+\else
+ \documentstyle[11pt,fancybox,soufuhyo]{jarticle}
+\fi
+\begin{document}
+
+% 題目
+
+\title{\Large 土木工学における土木学会論文集の役割とその版下原稿提出への
+移行および電子出版への将来見通し} % 日本語題目
+
+\etitle{\large Future of Publication of JSCE Journals and a New
+Form of Publishing with Multi Media} % 英語題目
+
+% 著者データ
+%   \author[会員]{姓名}{LAST NAME, First name}{学位}{勤務先・職名}
+%  会員欄
+%         正会員　 \author{姓名}{LAST NAME, ....
+%   フェロー会員   \author[1]{姓名}{LAST NAME, ....
+%       学生会員   \author[2]{姓名}{LAST NAME, ....
+%         非会員　 \author[3]{姓名}{LAST NAME, ....
+%
+%  第一著者のみ，最後に会員番号が必要
+\author{建設太郎}{KENSETSU, Taro}{工博}%
+ {建設大学工学部環境土木工学科・教授}{1234567}
+
+%  第二著者
+\authorA[3]{土木花子}{DOBOKU, Hanako}{}{建設コンサルタント・主任技師}
+
+%  第三著者
+\authorB[1]{地球　栄}{CHIKYU, Sakae}{Ph D.}{木土理化学研究所・主任}
+
+%  第四著者
+\authorC[2]{環境三五郎}{KANKYO, Sangoro}{工修}{建設大学工学部土木工学科}
+
+%  第五著者　いないときはコメントアウト
+%  \authorD{}{}{}{}
+
+%  第六著者
+%  \authorE{}{}{}{}
+
+% 投稿区分： 論文=1, 報告=2, ノート=3, 討議=4, 研究展望=5
+
+\kubun{2}
+
+% 投稿部門： I から VII までを算用数字で
+
+\bumon{5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 以下の項目で該当しないものは，ブランクにせず，コメントアウトします %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 複数の部門に関係し，査読を上の部門以外にも希望する場合に
+
+\fukubumon{3}
+
+% 過去の発表の経緯 [0]は審査無し，[1]は審査有りです．
+
+\ikisatua[0]{ここには過去の経緯を書きます．a}
+\ikisatub[1]{ここには過去の経緯を書きます．b}
+\ikisatuc[0]{ここには過去の経緯を書きます．c}
+%\ikisatud[1]{ここには過去の経緯を書きます．d}
+%\ikisatue[0]{ここには過去の経緯を書きます．e}
+
+% この論文がかつて返却になったものの場合
+%
+% 返却された論文の題目
+
+\returntitle{この論文の元となったところの返却された論文題目です}
+
+% そのときの部門
+
+\returnbumon{5}
+
+% 投稿区分：論文=1, 報告=2, ノート=3
+
+\returnkubun{2}
+
+% 投稿した時期の年と月を \returndate{西暦年}{月} で
+% ^^^^^^^^
+
+\returndate{1993}{9}
+
+% 投稿した期の論文番号 (a - b) \returnno{a}{b} で
+% ^^^^^^^^
+
+\returnno{1}{999}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 以下の項目はすべて記入する %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 全頁数を算用数字で
+
+\totalpage{8}
+
+% 連絡者の住所を書きます． \par が許されます．ただし 2 行以内に．
+
+\address{〒 160 東京都新宿区四谷一丁目無番地\par
+ 建設大学工学部土木工学科\par
+ 建設太郎}
+
+% 電話番号：　内線がある時には \telephone[内線]{代表電話}
+
+\telephone[2468]{022-222-1800}
+
+% FAX 番号
+
+\fax{022-268-3689}
+
+% Email アドレス
+
+\email{hoge@achara.domain.univ.ac.jp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ここまでで STOP ！　これ以下も手を入れないこと．
+\doit
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
