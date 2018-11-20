@@ -16,6 +16,13 @@ ronbun:
 	$(PLATEX) $(FILE)
 	$(DVIPDF) $(FILE)
 
+man:
+	$(eval FILE := jsce-man)
+	$(PLATEX) $(FILE)
+	$(PLATEX) $(FILE)
+	$(DVIPDF) $(FILE)
+
+
 bibtex:
 	$(eval FILE := bibtex-j)
 	$(PLATEX) $(FILE)

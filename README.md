@@ -7,6 +7,7 @@ pLaTeX 2e 用のディレクトリのみ抽出し，編集しています．
 以下のコマンドを実行すると，PDFが作成されます．
 ```shell
 make ronbun # ronbun-j.pdf
+make man    # jsce-man.pdf
 make bibtex # bibtex-j.pdf
 make soufu  # soufuhyo2e.pdf
 ```
