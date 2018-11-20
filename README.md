@@ -8,7 +8,7 @@ pLaTeX 2e 用のディレクトリのみ抽出し，編集しています．
 ```shell
 make ronbun # ronbun-j.pdf
 make man    # jsce-man.pdf
-make bibtex # bibtex-j.pdf
+make bib    # bibtex-j.pdf
 make soufu  # soufuhyo2e.pdf
 ```
 また `make all` および `make`は， `make ronbun`と同じです．

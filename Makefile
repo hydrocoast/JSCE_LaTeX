@@ -23,7 +23,7 @@ man:
 	$(DVIPDF) $(FILE)
 
 
-bibtex:
+bib:
 	$(eval FILE := bibtex-j)
 	$(PLATEX) $(FILE)
 	$(PBIB) $(FILE)
