@@ -13,6 +13,8 @@ all: ronbun
 ronbun:
 	$(eval FILE := ronbun-j)
 	$(PLATEX) $(FILE)
+	$(PBIB) $(FILE)
+	$(PLATEX) $(FILE)
 	$(PLATEX) $(FILE)
 	$(DVIPDF) $(FILE)
 
@@ -37,5 +39,6 @@ soufu:
 	$(DVIPDF) $(FILE) 
 
 clean:
-	-rm -f *~ *.log *.dvi *.blg *.aux *.out *.bbl *.lot *.toc *.lof *.pdf
+	-rm -f *~ *.log *.dvi *.blg *.aux *.out *.bbl *.lot *.toc *.lof *.pdf *.fdb_latexmk *.fls
+
 
