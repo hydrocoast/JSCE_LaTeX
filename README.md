@@ -4,6 +4,11 @@ pLaTeX 2e 用のディレクトリのみ抽出し編集しています．
 
 ## 使い方
 動作確認環境は，Ubuntu 16.04 LTS および 18.04 LTSです．  
+まずこのリポジトリを clone し，移動します．
+```shell
+git clone https://github.com/hydrocoast/JSCE_LaTeX
+cd JSCE_LaTeX
+```
 以下のコマンドを実行すると，PDFが作成されます．
 ```shell
 make ronbun # ronbun-j.pdf
@@ -12,6 +17,17 @@ make bib    # bibtex-j.pdf
 make soufu  # soufuhyo2e.pdf
 ```
 また `make all` および `make`は `make ronbun`と同じです．
+
+
+## 論文原稿の作成
+論文執筆にあたっては `ronbun-j.tex` 以外のテンプレートは不要なため，
+```shell
+make new
+```
+で不要ファイルを削除します．以降，`ronbun-j.tex` を編集し， `make` を実行することで論文作成が可能です．  
+このとき，このリポジトリのリモート名は `origin` から `template` に変更され，
+`origin` に各自の論文原稿のリポジトリを割り当てることができます．
+
 
 ## 注意点
 「2018年7月18日改訂」版を編集し作成されています．今後書式が更新される可能性があります．  
