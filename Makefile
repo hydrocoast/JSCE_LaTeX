@@ -7,7 +7,6 @@ KANJI := utf8
 PLATEX := platex -kanji=$(KANJI)
 PBIB := pbibtex -kanji=$(KANJI)
 DVIPDF := dvipdfmx -p a4
-ORGURL := https://github.com/hydrocoast/JSCE_LaTeX
 
 .PHONY: all clean
 all: ronbun
@@ -45,8 +44,7 @@ clean:
 new: clean
 	-rm bibtex-j.tex bibtexdb.bib jsce-man.tex soufu*
 	git init
-	git remote remove origin
-	git remote add template $(ORGURL)
+	git remote rename origin template
 
 template:
 	git reset --hard template/master
