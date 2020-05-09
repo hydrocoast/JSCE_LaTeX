@@ -41,4 +41,12 @@ soufu:
 clean:
 	-rm -f *~ *.log *.dvi *.blg *.aux *.out *.bbl *.lot *.toc *.lof *.pdf *.fdb_latexmk *.fls
 
+new: clean
+	-rm bibtex-j.tex bibtexdb.bib jsce-man.tex soufu*
+	git init
+	git remote remove origin
+	git remote add template $(ORG)
+
+template:
+	git reset --hard template/master
 
