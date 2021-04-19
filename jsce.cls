@@ -1635,7 +1635,8 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
    \ifEN@LISH\vskip 7mm\else\vskip 4mm\fi % cheating
 %                                                                title
    \begin{ctrindent}{10mm}{10mm}%
-    {\ifEN@LISH\LARGE\else\huge\fi\bfseries\sffamily \lineskip .5em \@title \par}%
+%    {\ifEN@LISH\LARGE\else\huge\fi\bfseries\sffamily \lineskip .5em \@title \par}%
+    {\ifEN@LISH\LARGE\bfseries\sffamily\else\huge\gtfamily\fi\lineskip .5em \@title \par}%
    \end{ctrindent} \vskip 12mm % cheating
 %                                                               author
    \begin{ctrindent}{10mm}{10mm}%

@@ -94,9 +94,19 @@ It should be placed below the title and authors' names set in 12\,pt, spacing a 
 %
 
 \newcommand{\correspo}{\rmfamily(Corresponding Author)}
+
+%% 日本語の場合のみ対応
+% 見出しフォント
 \renewcommand{\thesection}{{\sf\arabic{section}.}}
 \renewcommand{\thesubsection}{{\sf(\arabic{subsection})}}
 \renewcommand{\thesubsubsection}{{\sf\alph{subsubsection})}}
+% 図表フォント
+\renewcommand{\figurename}{図\nobreak}
+\renewcommand{\tablename}{表\nobreak}
+\renewcommand{\figuresname}{図\nobreak}
+\renewcommand{\tablesname}{表\nobreak}
+\renewcommand{\thefigure}{{\sf-\arabic{figure}}}
+\renewcommand{\thetable}{{\sf-\arabic{table}}}
 
 
 \begin{document}
@@ -122,16 +132,16 @@ It should be placed below the title and authors' names set in 12\,pt, spacing a 
 タイトルはA4用紙の上辺に約3\,cmのマージンを取り，センタリングします．
 以下次の順にタイトル部分の構成要素を書いて下さい．
 \begin{description}
-\item[] タイトル：ゴシック体20\,ptフォント（英文なら17\,pt）\par
+\item[] タイトル：ゴシック体20\,ptフォント（英文なら17\,pt），センタリング\par
         （約1.5\,cmのスペース）
-\item[] 著者名：明朝体12\,ptフォント\par
+\item[] 著者名：明朝体12\,ptフォント，センタリング\par
         （約5\,mmのスペース）
-\item[] 著者所属：明朝体8\,ptフォント（英文9\,pt）\par
-        （約1\,cmのスペース）
-\item[] アブストラクト：明朝体9\,ptフォント（英文10\,pt），7行以内\par
+\item[] 著者所属：明朝体9\,ptフォント，センタリング\par
+\item[] E-mailアドレス：9\,ptフォント，センタリング\par
+        （約10\,mmのスペース）
+\item[] アブストラクト：明朝体9\,ptフォント（英文10\,pt）\par
         （1行のスペース）
-\item[] キーワード：Computer Modern, italic, 9\,pt, \par
-        英文10\,pt, 数語，2行以内
+\item[] キーワード：Times-Italic, 10\,pt, 5つ程度，2行以内
 \end{description}
 
 著者と所属とは肩付き数字で対応づけ，上記のように並べて
@@ -140,9 +150,9 @@ It should be placed below the title and authors' names set in 12\,pt, spacing a 
 
 \subsection{本文部分のレイアウトとフォント}
 
-本文とキーワードの間に約1\,cmのスペースを空けてください．
+本文とキーワードの間に約10\,mmのスペースを空けてください．
 
-本文は二段組で，左右のマージンは2\,cmずつ，段と段との間のスペースは
+本文は二段組で，左右のマージンは20\,mmずつ，段と段との間のスペースは
 約6\,mmとします．下辺のマージンは24\,mmです．
 
 本文には明朝体10\,pt（英文11\,pt）フォントを用いて下さい．
@@ -177,14 +187,14 @@ It should be placed below the title and authors' names set in 12\,pt, spacing a 
 \subsection{見出しのレベル}
 
 見出しのレベルは3段階までとします．第1レベルの見出し（節）はゴシック
-体とし，{\bf 2.}などの数字に続けて書きます．
+体とし，{\sf 2.}などの数字に続けて書きます．
 また，見出しの上下にスペースを空
 けます．このファイルのサンプルから分かるように，上を1行以上，
 下を1行程度空けて下さい．
 
 \subsection{第2レベルの見出し}
 
-第2レベルの見出し（小節）もゴシック体で，{\bf (4)}などの
+第2レベルの見出し（小節）もゴシック体で，{\sf (4)}などの
 括弧付き数字を付けます．見出しの上だけに1行程度の
 スペースを空けて下さい．
 
@@ -280,9 +290,9 @@ a_n=\cdots \label{eq:twoeqns-b}
 
 最終ページには英文のタイトル，著者名および要旨を横一段組で書きます．こ
 のサンプルにあるように，本文や参考文献リストまでの二段組部分の左右の柱の
-高さをほぼ同じにし，1\,cm程度の空白を
+高さをほぼ同じにし，10\,mm程度の空白を
 入れて英文要旨を配置します．英文要旨部
-分の幅はタイトル部分と同じく本文よりも左右を1\,cmずつ狭くします．
+分の幅はタイトル部分と同じく本文よりも左右を10\,mmずつ狭くします．
 
 \ack 「謝辞」は「結論」の後に置いて下さい．
 見出しとコロンをゴシック体で
