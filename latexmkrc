@@ -1,5 +1,8 @@
-$latex = 'uplatex';
-$bibtex = 'upbibtex';
-$dvipdf = 'dvipdfmx -p a4 %O -o %D %S';
-$makeindex = 'mendex -U %O -o %D %S';
-$pdf_mode = 3; 
+if ($^O eq 'MSWin32') {
+} else {
+    $latex = 'uplatex';
+    $bibtex = 'upbibtex';
+    $dvipdf = 'dvipdfmx -p a4 %O -o %D %S';
+    $makeindex = 'mendex -U %O -o %D %S';
+    $pdf_mode = 3;
+}
