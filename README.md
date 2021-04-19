@@ -1,32 +1,46 @@
 # 土木学会論文集 LaTeX テンプレート
-土木学会のページ[各種書式](http://committees.jsce.or.jp/jjsce/pform)より，LaTeXテンプレートを展開，Linux(Ubuntu)で動作するように修正しました．  
-pLaTeX 2e 用のディレクトリのみ抽出し編集しています．
+土木学会のページ[各種書式](http://committees.jsce.or.jp/jjsce/pform)より，LaTeXテンプレートを展開し，Linux(Ubuntu)でも動作するようにしました．  
+pLaTeX 2e 用のディレクトリのみ抽出し編集しています．  
+
+## 事前準備
+- Ubuntu の人
+texlive をインストールしておいてください．
+
+- Mac の人
+MacTeX をインストールしておいてください．
+
+- Windowsの人
+よくわかりませんが，頑張ってLaTeX環境を構築してください．
+
+- Ubuntu 以外の Linux ディストリビューションの人
+すいません．よくわかりません．
+
 
 ## 使い方
-動作確認環境は，Ubuntu 16.04 LTS および 18.04 LTSです．  
-まずこのリポジトリを clone し，移動します．
+動作確認環境は，Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS (texlive)，macOS Catalina (MacTeX)です．  
+まずこのリポジトリを clone し，当該ディレクトリへ移動します．
 ```shell
 git clone https://github.com/hydrocoast/JSCE_LaTeX
 cd JSCE_LaTeX
 ```
-以下のコマンドを実行すると，PDFが作成されます．
+ターミナル上で `make` または `make ronbun` と実行することにより，`ronbun-j.pdf` PDFファイルが作成されます．
 ```shell
-make ronbun # ronbun-j.pdf
-make man    # jsce-man.pdf
-make bib    # bibtex-j.pdf
-make soufu  # soufuhyo2e.pdf
+make
 ```
-また `make all` および `make`は `make ronbun`と同じです．
 
 
 ## 論文原稿の作成
-論文執筆にあたっては `ronbun-j.tex` 以外のテンプレートは不要と思います．このため，
+論文執筆にあたって，本原稿のリモート名を `origin` にした方が都合が良いと思います．このため，
 ```shell
 make new
 ```
-で不要ファイルを削除します．以降，`ronbun-j.tex` を編集し， `make` を実行することで論文作成が可能です．  
-このとき，このリポジトリのリモート名は `origin` から `template` に変更され，
+を行うことで，このリポジトリのリモート名を `origin` から `template` へと変更できます，  
 `origin` に各自の論文原稿のリポジトリを割り当てることができます．
+```shell
+git remote add origin <論文原稿のリポジトリURL>
+```
+以降，`ronbun-j.tex` を編集して `make` を実行することで本原稿の論文PDFが同様に生成されるとともに，
+テンプレートとは別のバージョン管理が可能です．  
 
 
 ## 注意点
