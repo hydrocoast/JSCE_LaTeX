@@ -20,7 +20,7 @@ make soufu  # soufuhyo2e.pdf
 
 
 ## 論文原稿の作成
-論文執筆にあたっては `ronbun-j.tex` 以外のテンプレートは不要なため，
+論文執筆にあたっては `ronbun-j.tex` 以外のテンプレートは不要と思います．このため，
 ```shell
 make new
 ```
