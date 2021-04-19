@@ -42,20 +42,17 @@
 %
 \title{土木学会論文集の完全版下投稿用和文原稿\LaTeX 作成例}
 %
-\endtitle{PRINT SAMPLE FOR JAPANESE MANUSCRIPT FOR JOURNALS OF
- JSCE USING \LaTeX}
+\endtitle{PRINT SAMPLE FOR JAPANESE MANUSCRIPT FOR JOURNALS OF JSCE USING \LaTeX}
 %
 % emailアドレスのフォントをタイプライター体にしたい方は次行をアンコメント
 % \emailstyle{\ttfamily}
 % emailアドレスを公開される方は，
 %% \thanks{○○○○○○\email{your_name@foo.ac.jp}}のようにしてください．
 %
-\author{論文集　編集委員会\thanks{正会員 工博 土木大学教授 工学部
-土木工学科（〒160-0001東京都新宿区四谷一丁目
-無番地）\email{your_name@foo.ac.jp}}・
-事務　局\thanks{正会員 工修 土木建設株式会社 技術開発部（〒160-0002東京
-都新宿区三矢六丁目13-5）}・
-Civil ENGINEER\thanks{Member of JSCE, PhD., JSCE Corp.}}
+\author{論文集　編集委員会\thanks{正会員 土木大学教授 工学部 土木工学科（〒160-0001東京都新宿区四谷一丁目無番地）\email{your_name@foo.ac.jp}}・
+        事務　局\thanks{正会員 土木建設株式会社 技術開発部（〒160-0002東京都新宿区三矢六丁目13-5）\email{author2@foo.ac.jp} \correspo}・
+        Civil ENGINEER\thanks{Member of JSCE, JSCE Corp. \email{author3@foo.ac.jp}}
+        }
 %
 \endauthor{Editorial COMMITTEE, Japan SOCIETY and Civil ENGINEERING}
 %
@@ -90,6 +87,9 @@ size used here is 10\,pt.
 The length may be within 7 lines. It is
 preceded by the title and the authors; both are centered.
 The title and authors use 12\,pt font.}
+
+\newcommand{\correspo}{\rmfamily (Corresponding Author)}
+
 %
 % \titlepagecontrol{1}
 %
