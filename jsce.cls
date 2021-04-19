@@ -1644,7 +1644,8 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 %
    \setcounter{footnote}{0}%
 %    {\footnotesize\baselineskip3.5mm \@thanks}% original
-    {\footnotesize\baselineskip3.5mm \@thanks}% 行間少し狭いので調整 v1.2
+%    {\footnotesize\baselineskip3.5mm \@thanks}% 行間少し狭いので調整 v1.2
+     {\small\baselineskip4.5mm \@thanks}% 9pt (\small) に調整 フォントサイズに応じて行間も修正
    \end{ctrindent}
 %
   \vskip 9mm % cheating
