@@ -1850,21 +1850,24 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \@startsection{section}{1}{\z@}%
     {3.5ex plus .2ex minus.1ex}%
     {2.3ex plus.2ex}%
-    {\reset@font\large\bfseries\sffamily}%
+%    {\reset@font\large\bfseries\sffamily}%
+    {\reset@font\fontsize{11pt}{12pt}\gtfamily}%
 }
 
 \renewcommand{\subsection}{%
 \@startsection{subsection}{2}{\z@}%
     {3.25ex plus .1ex minus.1ex}%
     {.1ex plus.1ex}%
-    {\reset@font\normalsize\bfseries\sffamily}%
+%    {\reset@font\normalsize\bfseries\sffamily}%
+    {\reset@font\normalsize\gtfamily}%
 }
 
 \renewcommand{\subsubsection}{%
 \@startsection{subsubsection}{3}{\z@}%
     {.2ex plus .1ex minus.1ex}%
     {.1ex plus.1ex}%
-    {\reset@font\normalsize\bfseries\sffamily}%
+%    {\reset@font\normalsize\bfseries\sffamily}%
+    {\reset@font\normalsize\gtfamily}%
 }
 
 \renewcommand{\paragraph}{%

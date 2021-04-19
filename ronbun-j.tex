@@ -27,7 +27,7 @@
 % \usepackage{txfonts}
 %  あるいは，v, w に丸みを帯びたものの方がお好きな場合は
 % \usepackage[varg]{txfonts}
-%\usepackage{newtxtext,newtxmath}
+%
 %
 \finalversion % ヘッダが不要らしい
 %
@@ -83,9 +83,6 @@ The length should be 300 words or less.
 It should be placed below the title and authors' names set in 12\,pt, spacing a single line.
 }
 
-
-\newcommand{\correspo}{\rmfamily(Corresponding Author)}
-
 %
 % \titlepagecontrol{1}
 %
@@ -95,6 +92,13 @@ It should be placed below the title and authors' names set in 12\,pt, spacing a 
 % \def\theenumi{\alph{enumi}}  % もし enumerate 最初の箇条を (a) と
 % \def\labelenumi{(\theenumi)} % したい場合・・・
 %
+
+\newcommand{\correspo}{\rmfamily(Corresponding Author)}
+\renewcommand{\thesection}{{\sf\arabic{section}.}}
+\renewcommand{\thesubsection}{{\sf(\arabic{subsection})}}
+\renewcommand{\thesubsubsection}{{\sf\alph{subsubsection})}}
+
+
 \begin{document}
 
 \maketitle
