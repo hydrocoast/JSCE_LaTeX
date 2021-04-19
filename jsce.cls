@@ -1374,7 +1374,9 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
 \newcommand{\tablesname}{表\nobreak--}
 \newcommand{\photosname}{写真\nobreak--}
 
-\newcommand{\@receivename}{\ 受付}
+%\newcommand{\@receivename}{\ 受付}
+\newcommand{\@receivename}{Received\ }
+\newcommand{\@acceptname}{Accepted\ }
 \renewcommand{\appendixname}{付録}
 \newcommand{\appendixsectionname}{\Roman{section}}
 \renewcommand{\refname}{参考文献}
@@ -2425,6 +2427,9 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
 \def\receivedate#1{\gdef\@receivedate{#1}}
 \def\@receivedate{\ifEN@LISH\@englishmonth\ \number\day, \number\year\else\number\year. \number\month. \number\day\fi}% used to be {\today}
 %
+\def\acceptdate#1{\gdef\@acceptdate{#1}}
+
+%
 \long\def\endtitle#1{\gdef\@endtitle{#1}} \def\@endtitle{}
 \def\endauthor#1{\gdef\@endauthor{#1}} \def\@endauthor{}
 \long\def\endabstract#1{\gdef\@endabstract{#1}} % permit paragraphs
@@ -2522,8 +2527,14 @@ $$\halign to\displaywidth\bgroup\@eqnsel\hskip\@centering
   {\l@stpagesettings[\z@]}}
 %
 \def\l@stpagesettings[#1]{%
-  \begin{flushright}{\small\bf (\ifEN@LISH\@receivename{}\fi \@receivedate
-   \ifEN@LISH\relax\else\@receivename{}\fi)} \end{flushright}%
+  \begin{flushright}
+      {\small\bf (\@receivename{}\@receivedate\relax)} \\
+      {\small\bf (\@acceptname{}\@acceptdate\relax)}
+  \end{flushright}%
+%   \begin{flushright}{\small\bf (\@acceptname{}\@acceptdate
+%   \relax)} \end{flushright}%
+%   \begin{flushright}{\small\bf (\ifEN@LISH\@receivename{}\fi \@receivedate
+%   \ifEN@LISH\relax\else\@receivename{}\fi)} \end{flushright}%
 %
 % put \endabstract in the next page when no room left for it
 %
