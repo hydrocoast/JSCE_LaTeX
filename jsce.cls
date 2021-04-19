@@ -1654,7 +1654,7 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
    \begin{list}{}{\setlength{\leftmargin}{10mm}%
     \topsep=0pt \partopsep=0pt \parsep=0pt \listparindent=9pt
     \setlength{\rightmargin}{\leftmargin}%
-    \small
+    \small % abstract のフォントサイズは 9pt
 \xkanjiskip=.25zw plus1pt minus1pt%
 }%
    \item \ignorespaces\hspace*{\listparindent}\ignorespaces
@@ -1666,7 +1666,8 @@ LaTeX2e Class File for Japan Society of Cilvil Engineers
      \topsep=-0.8\parskip \partopsep=0pt
      \settowidth{\labelwidth}{\keywordsname}%
      \settowidth{\leftmargin}{1.1\keywordsname}%
-     \small\it\setlength{\baselineskip}{0.75\normalbaselineskip}}%
+     %\small\it\setlength{\baselineskip}{0.75\normalbaselineskip}}%
+     \normalsize\it\setlength{\baselineskip}{0.75\normalbaselineskip}}% \normalsize に変更
     \item \@keywords \par
     \end{list}}%
    \end{list}}%
