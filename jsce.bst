@@ -48,7 +48,7 @@ ENTRY
     volume
     year
   }
-  {}
+  {is.kanji.entry}
   { label }
 
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
@@ -216,7 +216,11 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "{\em " swap$ * "}" * }
+    { duplicate$ is.kanji.str$
+        'skip$
+        { "{\em " swap$ * "}" * }
+      if$
+    }
   if$
 }
 
@@ -230,27 +234,35 @@ FUNCTION {format.names}
     { namesleft #0 > }
 %           JSCE modification
 %    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
-    { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+%    { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+    { s nameptr "{ff}{ll}" format.name$ is.kanji.str$
+      {s nameptr "{ff}{ll}" format.name$ 't :=}
+      {s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=}
+      if$
       nameptr #1 >
-	{ namesleft #1 >
-	    { ", " * t * }
-	    { numnames #2 >
-		{ "," * }
-		'skip$
+	    { namesleft #1 >
+	      { ", " * t * }
+	      { numnames #2 >
+		      { "," * }
+		      'skip$
 	      if$
 	      t "others" =
-		{ " et~al." * }
-		{ " and " * t * }
+		      { " et~al." * }
+          { t is.kanji.str$
+		        { ", " * t * }
+		        { " and " * t * }
+          }
+          if$
 	      if$
 	    }
-	  if$
-	}
-	't
+	    if$
+	  }
+	  't
       if$
       nameptr #1 + 'nameptr :=
       namesleft #1 - 'namesleft :=
     }
-  while$
+    while$
 }
 
 % JSCE modification: editors = first-name first
