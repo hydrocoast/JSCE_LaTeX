@@ -231,38 +231,39 @@ FUNCTION {format.names}
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
-    { namesleft #0 > }
-%           JSCE modification
-%    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
-%    { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+  { namesleft #0 > }
     { s nameptr "{ff}{ll}" format.name$ is.kanji.str$
-      {s nameptr "{ff}{ll}" format.name$ 't :=}
-      {s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=}
+        {s nameptr "{ff}{ll}" format.name$ 't :=}
+        {s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=}
       if$
       nameptr #1 >
-	    { namesleft #1 >
-	      { ", " * t * }
-	      { numnames #2 >
-		      { "," * }
-		      'skip$
-	      if$
-	      t "others" =
-		      { " et~al." * }
-          { t is.kanji.str$
-		        { ", " * t * }
-		        { " and " * t * }
-          }
-          if$
-	      if$
-	    }
-	    if$
-	  }
-	  't
+	      { namesleft #1 >
+	          { ", " * t * }
+	          { numnames #2 >
+		            { "," * }
+                { t is.kanji.str$
+		                { "," * }
+                    'skip$
+                  if$
+                }
+	            if$
+	            t "others" =
+		            { " et~al." * }
+                { t is.kanji.str$
+		                { " " * t * }
+		                { " and " * t * }
+                  if$
+                }
+              if$
+	          }
+	        if$
+	      }
+	      't
       if$
       nameptr #1 + 'nameptr :=
       namesleft #1 - 'namesleft :=
     }
-    while$
+  while$
 }
 
 % JSCE modification: editors = first-name first
