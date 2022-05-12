@@ -18,7 +18,7 @@ MacTeX をインストールしておいてください．
 
 
 ## 使い方
-動作確認環境は，Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS (texlive)，macOS Catalina (MacTeX)です．  
+動作確認環境は，Ubuntu 16.04 LTS, 18.04 LTS, 20.04 LTS (texlive)，macOS Catalina, Big Sur (MacTeX)です．  
 まずこのリポジトリを clone し，当該ディレクトリへ移動します．
 ```shell
 git clone https://github.com/hydrocoast/JSCE_LaTeX
@@ -38,7 +38,7 @@ make new
 ```
 その後，`origin` に各自の論文原稿のリポジトリを割り当てることができます．
 ```shell
-git remote add origin <論文原稿のリポジトリURL>
+git remote add origin git@github.com:username/各自作成したリポジトリ名.git
 ```
 以降，`ronbun-j.tex` を編集して `make` を実行することで本原稿の論文PDFが同様に生成されるとともに，
 テンプレートとは別のバージョン管理が可能です．  
